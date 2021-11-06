@@ -1,0 +1,34 @@
+{
+  "name": "pino-loki-transport",
+  "version": "0.8.0",
+  "description": "A Pino transport to send logs to Loki via protobuf",
+  "main": "dist/logWorker.js",
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasyes/pino-loki-transport.git"
+  },
+  "homepage": "https://github.com/jasyes/pino-loki-transport#readme",
+  "author": "jasyes",
+  "license": "MIT",
+  "keywords": [
+    "pino-loki",
+    "pino-loki-protobuf",
+    "pino",
+    "pino-transport",
+    "loki",
+    "loki-transport"
+  ],
+  "dependencies": {
+    "axios": "^0.24.0",
+    "pino": "^7.1.0",
+    "pino-abstract-transport": "^0.5.0",
+    "snappy": "^7.0.5"
+  },
+  "devDependencies": {
+    "typescript": "^4.4.4"
+  }
+}
