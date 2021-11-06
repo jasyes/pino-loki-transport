@@ -45,8 +45,8 @@ export const createTransport = (opts: LogWorkerOptions) => {
                                 password: options.password
                             } : undefined
                         });
-                        if(response.status !== 204) {
-                            for(const item of batch) {
+                        if (response.status !== 204) {
+                            for (const item of batch) {
                                 console.log(item.time, ' LOG: ', item.msg);
                             }
                             console.error('Error during sending logs to Loki. Received status code: ', response.data, ' data: ', response.data);
@@ -64,3 +64,5 @@ export const createTransport = (opts: LogWorkerOptions) => {
 }
 
 module.exports = createTransport;
+
+export { LogWorkerOptions };

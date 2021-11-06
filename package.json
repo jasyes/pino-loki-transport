@@ -3,9 +3,10 @@
   "version": "0.8.0",
   "description": "A Pino transport to send logs to Loki via protobuf",
   "main": "dist/logWorker.js",
+  "types": "dist/logWorker.d.ts",
   "scripts": {
     "build": "tsc",
-    "prepublishOnly": "npm build"
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
