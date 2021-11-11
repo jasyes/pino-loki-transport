@@ -6,6 +6,7 @@ export interface LogWorkerOptions {
     username?: string;
     password?: string;
     chronologicalOrder?: boolean;
+    labels: string[];
 }
 export declare type PinoLogLine = {
     level: number;

@@ -1,6 +1,6 @@
 {
   "name": "pino-loki-transport",
-  "version": "0.8.1",
+  "version": "0.8.5",
   "description": "A Pino transport to send logs to Loki via protobuf",
   "main": "dist/logWorker.js",
   "types": "dist/logWorker.d.ts",
@@ -27,6 +27,7 @@
     "axios": "^0.24.0",
     "pino": "^7.1.0",
     "pino-abstract-transport": "^0.5.0",
+    "rxjs": "^7.4.0",
     "snappy": "^7.0.5"
   },
   "devDependencies": {

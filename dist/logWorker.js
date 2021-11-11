@@ -20,37 +20,50 @@ const createTransport = (opts) => {
             lokiPort: opts.lokiPort || 3100,
             username: opts.username,
             password: opts.password,
-            chronologicalOrder: opts.chronologicalOrder
+            chronologicalOrder: opts.chronologicalOrder,
+            labels: [...new Set([...opts.labels, 'hostname', 'app'])],
         };
         console.log('logWorker started!');
-        return pino_abstract_transport_1.default((source) => {
+        return (0, pino_abstract_transport_1.default)(source => {
             try {
-                const logObservable = rxjs_1.fromEvent(source, 'data');
-                logObservable.pipe(operators_1.bufferTime(options.batchTimeout, null, options.maxBatchSize)).subscribe(async (batch) => {
+                const logObservable = (0, rxjs_1.fromEvent)(source, 'data');
+                logObservable
+                    .pipe((0, operators_1.bufferTime)(options.batchTimeout, null, options.maxBatchSize))
+                    .subscribe(async (batch) => {
                     if (batch.length > 0) {
-                        const preparedBatch = helpers_1.prepareProtoBatch(batch, options.chronologicalOrder);
-                        const err = logproto_1.logproto.PushRequest.verify(preparedBatch);
-                        if (err) {
-                            throw new Error(err);
-                        }
-                        const message = logproto_1.logproto.PushRequest.create(preparedBatch);
-                        const buffer = logproto_1.logproto.PushRequest.encode(message).finish();
-                        const result = await snappy_1.compress(buffer);
-                        const response = await axios_1.default.post(`${options.lokiUrl}:${options.lokiPort}/loki/api/v1/push`, result, {
-                            headers: {
-                                'Content-Type': 'application/x-protobuf',
-                                'Content-Length': result.length + ''
-                            },
-                            auth: options.username && options.password ? {
-                                username: options.username,
-                                password: options.password
-                            } : undefined
-                        });
-                        if (response.status !== 204) {
-                            for (const item of batch) {
-                                console.log(item.time, ' LOG: ', item.msg);
+                        try {
+                            const preparedBatch = (0, helpers_1.prepareProtoBatch)(batch, options.labels, options.chronologicalOrder);
+                            const err = logproto_1.logproto.PushRequest.verify(preparedBatch);
+                            if (err) {
+                                throw new Error(err);
                             }
-                            console.error('Error during sending logs to Loki. Received status code: ', response.data, ' data: ', response.data);
+                            const message = logproto_1.logproto.PushRequest.create(preparedBatch);
+                            const buffer = logproto_1.logproto.PushRequest.encode(message).finish();
+                            const result = await (0, snappy_1.compress)(buffer);
+                            const response = await axios_1.default.post(`${options.lokiUrl}:${options.lokiPort}/loki/api/v1/push`, result, {
+                                headers: {
+                                    'Content-Type': 'application/x-protobuf',
+                                    'Content-Length': result.length + '',
+                                },
+                                auth: options.username && options.password
+                                    ? {
+                                        username: options.username,
+                                        password: options.password,
+                                    }
+                                    : undefined,
+                            });
+                            if (response.status !== 204) {
+                                throw new Error('Error during sending logs to Loki. Received status code: ' +
+                                    response.status +
+                                    ' data: ' +
+                                    JSON.stringify(response.data));
+                            }
+                        }
+                        catch (err) {
+                            for (const item of batch) {
+                                console.log(item.time, item.level, ' LOG: ', item.msg);
+                            }
+                            console.error('error during log sent from LokiWorker', err);
                         }
                     }
                 });

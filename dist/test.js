@@ -7,13 +7,13 @@ const pino_1 = __importDefault(require("pino"));
 const path_1 = __importDefault(require("path"));
 const target = path_1.default.resolve('./dist/logWorker.js');
 console.log('start worker taget', target);
-const logger = pino_1.default({
+const logger = (0, pino_1.default)({
     transport: {
         target,
         options: {
-            lokiUrl: 'http://10.10.17.5'
-        }
-    }
+            lokiUrl: 'http://10.10.17.5',
+        },
+    },
 });
 console.log('pino started');
 setInterval(() => {
