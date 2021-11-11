@@ -1,38 +1,34 @@
 "use strict";
 /*eslint-disable block-scoped-var, id-length, no-control-regex, no-magic-numbers, no-prototype-builtins, no-redeclare, no-shadow, no-var, sort-vars*/
 (function (global, factory) {
-    /* global define, require, module */
     /* AMD */ if (typeof define === 'function' && define.amd)
-        define(['protobufjs/minimal'], factory);
-    /* CommonJS */ else if (typeof require === 'function' &&
-        typeof module === 'object' &&
-        module &&
-        module.exports)
-        module.exports = factory(require('protobufjs/minimal'));
+        define(["protobufjs/minimal"], factory);
+    /* CommonJS */ else if (typeof require === 'function' && typeof module === 'object' && module && module.exports)
+        module.exports = factory(require("protobufjs/minimal"));
 })(this, function ($protobuf) {
-    'use strict';
+    "use strict";
     // Common aliases
     var $Reader = $protobuf.Reader, $Writer = $protobuf.Writer, $util = $protobuf.util;
     // Exported root namespace
-    var $root = $protobuf.roots['default'] || ($protobuf.roots['default'] = {});
+    var $root = $protobuf.roots["default"] || ($protobuf.roots["default"] = {});
     $root.logproto = (function () {
         /**
-     * Namespace logproto.
-     * @exports logproto
-     * @namespace
-     */
+         * Namespace logproto.
+         * @exports logproto
+         * @namespace
+         */
         var logproto = {};
         logproto.Pusher = (function () {
             /**
-       * Constructs a new Pusher service.
-       * @memberof logproto
-       * @classdesc Represents a Pusher
-       * @extends $protobuf.rpc.Service
-       * @constructor
-       * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
-       * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
-       * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
-       */
+             * Constructs a new Pusher service.
+             * @memberof logproto
+             * @classdesc Represents a Pusher
+             * @extends $protobuf.rpc.Service
+             * @constructor
+             * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
+             * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
+             * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
+             */
             function Pusher(rpcImpl, requestDelimited, responseDelimited) {
                 $protobuf.rpc.Service.call(this, rpcImpl, requestDelimited, responseDelimited);
             }
@@ -68,31 +64,31 @@
              * @returns {undefined}
              * @variation 1
              */
-            Object.defineProperty((Pusher.prototype.push = function push(request, callback) {
+            Object.defineProperty(Pusher.prototype.push = function push(request, callback) {
                 return this.rpcCall(push, $root.logproto.PushRequest, $root.logproto.PushResponse, request, callback);
-            }), 'name', { value: 'Push' });
+            }, "name", { value: "Push" });
             /**
-       * Calls Push.
-       * @function push
-       * @memberof logproto.Pusher
-       * @instance
-       * @param {logproto.IPushRequest} request PushRequest message or plain object
-       * @returns {Promise<logproto.PushResponse>} Promise
-       * @variation 2
-       */
+             * Calls Push.
+             * @function push
+             * @memberof logproto.Pusher
+             * @instance
+             * @param {logproto.IPushRequest} request PushRequest message or plain object
+             * @returns {Promise<logproto.PushResponse>} Promise
+             * @variation 2
+             */
             return Pusher;
         })();
         logproto.Querier = (function () {
             /**
-       * Constructs a new Querier service.
-       * @memberof logproto
-       * @classdesc Represents a Querier
-       * @extends $protobuf.rpc.Service
-       * @constructor
-       * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
-       * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
-       * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
-       */
+             * Constructs a new Querier service.
+             * @memberof logproto
+             * @classdesc Represents a Querier
+             * @extends $protobuf.rpc.Service
+             * @constructor
+             * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
+             * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
+             * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
+             */
             function Querier(rpcImpl, requestDelimited, responseDelimited) {
                 $protobuf.rpc.Service.call(this, rpcImpl, requestDelimited, responseDelimited);
             }
@@ -128,18 +124,18 @@
              * @returns {undefined}
              * @variation 1
              */
-            Object.defineProperty((Querier.prototype.query = function query(request, callback) {
+            Object.defineProperty(Querier.prototype.query = function query(request, callback) {
                 return this.rpcCall(query, $root.logproto.QueryRequest, $root.logproto.QueryResponse, request, callback);
-            }), 'name', { value: 'Query' }
+            }, "name", { value: "Query" });
             /**
-       * Calls Query.
-       * @function query
-       * @memberof logproto.Querier
-       * @instance
-       * @param {logproto.IQueryRequest} request QueryRequest message or plain object
-       * @returns {Promise<logproto.QueryResponse>} Promise
-       * @variation 2
-       */
+             * Calls Query.
+             * @function query
+             * @memberof logproto.Querier
+             * @instance
+             * @param {logproto.IQueryRequest} request QueryRequest message or plain object
+             * @returns {Promise<logproto.QueryResponse>} Promise
+             * @variation 2
+             */
             /**
              * Callback as used by {@link logproto.Querier#querySample}.
              * @memberof logproto.Querier
@@ -158,46 +154,18 @@
              * @returns {undefined}
              * @variation 1
              */
-            , 
-            /**
-       * Calls Query.
-       * @function query
-       * @memberof logproto.Querier
-       * @instance
-       * @param {logproto.IQueryRequest} request QueryRequest message or plain object
-       * @returns {Promise<logproto.QueryResponse>} Promise
-       * @variation 2
-       */
-            /**
-             * Callback as used by {@link logproto.Querier#querySample}.
-             * @memberof logproto.Querier
-             * @typedef QuerySampleCallback
-             * @type {function}
-             * @param {Error|null} error Error, if any
-             * @param {logproto.SampleQueryResponse} [response] SampleQueryResponse
-             */
-            /**
-             * Calls QuerySample.
-             * @function querySample
-             * @memberof logproto.Querier
-             * @instance
-             * @param {logproto.ISampleQueryRequest} request SampleQueryRequest message or plain object
-             * @param {logproto.Querier.QuerySampleCallback} callback Node-style callback called with the error, if any, and SampleQueryResponse
-             * @returns {undefined}
-             * @variation 1
-             */
-            Object.defineProperty((Querier.prototype.querySample = function querySample(request, callback) {
+            Object.defineProperty(Querier.prototype.querySample = function querySample(request, callback) {
                 return this.rpcCall(querySample, $root.logproto.SampleQueryRequest, $root.logproto.SampleQueryResponse, request, callback);
-            }), 'name', { value: 'QuerySample' }
+            }, "name", { value: "QuerySample" });
             /**
-       * Calls QuerySample.
-       * @function querySample
-       * @memberof logproto.Querier
-       * @instance
-       * @param {logproto.ISampleQueryRequest} request SampleQueryRequest message or plain object
-       * @returns {Promise<logproto.SampleQueryResponse>} Promise
-       * @variation 2
-       */
+             * Calls QuerySample.
+             * @function querySample
+             * @memberof logproto.Querier
+             * @instance
+             * @param {logproto.ISampleQueryRequest} request SampleQueryRequest message or plain object
+             * @returns {Promise<logproto.SampleQueryResponse>} Promise
+             * @variation 2
+             */
             /**
              * Callback as used by {@link logproto.Querier#label}.
              * @memberof logproto.Querier
@@ -216,46 +184,18 @@
              * @returns {undefined}
              * @variation 1
              */
-            , 
-            /**
-       * Calls QuerySample.
-       * @function querySample
-       * @memberof logproto.Querier
-       * @instance
-       * @param {logproto.ISampleQueryRequest} request SampleQueryRequest message or plain object
-       * @returns {Promise<logproto.SampleQueryResponse>} Promise
-       * @variation 2
-       */
-            /**
-             * Callback as used by {@link logproto.Querier#label}.
-             * @memberof logproto.Querier
-             * @typedef LabelCallback
-             * @type {function}
-             * @param {Error|null} error Error, if any
-             * @param {logproto.LabelResponse} [response] LabelResponse
-             */
-            /**
-             * Calls Label.
-             * @function label
-             * @memberof logproto.Querier
-             * @instance
-             * @param {logproto.ILabelRequest} request LabelRequest message or plain object
-             * @param {logproto.Querier.LabelCallback} callback Node-style callback called with the error, if any, and LabelResponse
-             * @returns {undefined}
-             * @variation 1
-             */
-            Object.defineProperty((Querier.prototype.label = function label(request, callback) {
+            Object.defineProperty(Querier.prototype.label = function label(request, callback) {
                 return this.rpcCall(label, $root.logproto.LabelRequest, $root.logproto.LabelResponse, request, callback);
-            }), 'name', { value: 'Label' }
+            }, "name", { value: "Label" });
             /**
-       * Calls Label.
-       * @function label
-       * @memberof logproto.Querier
-       * @instance
-       * @param {logproto.ILabelRequest} request LabelRequest message or plain object
-       * @returns {Promise<logproto.LabelResponse>} Promise
-       * @variation 2
-       */
+             * Calls Label.
+             * @function label
+             * @memberof logproto.Querier
+             * @instance
+             * @param {logproto.ILabelRequest} request LabelRequest message or plain object
+             * @returns {Promise<logproto.LabelResponse>} Promise
+             * @variation 2
+             */
             /**
              * Callback as used by {@link logproto.Querier#tail}.
              * @memberof logproto.Querier
@@ -274,46 +214,18 @@
              * @returns {undefined}
              * @variation 1
              */
-            , 
-            /**
-       * Calls Label.
-       * @function label
-       * @memberof logproto.Querier
-       * @instance
-       * @param {logproto.ILabelRequest} request LabelRequest message or plain object
-       * @returns {Promise<logproto.LabelResponse>} Promise
-       * @variation 2
-       */
-            /**
-             * Callback as used by {@link logproto.Querier#tail}.
-             * @memberof logproto.Querier
-             * @typedef TailCallback
-             * @type {function}
-             * @param {Error|null} error Error, if any
-             * @param {logproto.TailResponse} [response] TailResponse
-             */
-            /**
-             * Calls Tail.
-             * @function tail
-             * @memberof logproto.Querier
-             * @instance
-             * @param {logproto.ITailRequest} request TailRequest message or plain object
-             * @param {logproto.Querier.TailCallback} callback Node-style callback called with the error, if any, and TailResponse
-             * @returns {undefined}
-             * @variation 1
-             */
-            Object.defineProperty((Querier.prototype.tail = function tail(request, callback) {
+            Object.defineProperty(Querier.prototype.tail = function tail(request, callback) {
                 return this.rpcCall(tail, $root.logproto.TailRequest, $root.logproto.TailResponse, request, callback);
-            }), 'name', { value: 'Tail' }
+            }, "name", { value: "Tail" });
             /**
-       * Calls Tail.
-       * @function tail
-       * @memberof logproto.Querier
-       * @instance
-       * @param {logproto.ITailRequest} request TailRequest message or plain object
-       * @returns {Promise<logproto.TailResponse>} Promise
-       * @variation 2
-       */
+             * Calls Tail.
+             * @function tail
+             * @memberof logproto.Querier
+             * @instance
+             * @param {logproto.ITailRequest} request TailRequest message or plain object
+             * @returns {Promise<logproto.TailResponse>} Promise
+             * @variation 2
+             */
             /**
              * Callback as used by {@link logproto.Querier#series}.
              * @memberof logproto.Querier
@@ -332,46 +244,18 @@
              * @returns {undefined}
              * @variation 1
              */
-            , 
-            /**
-       * Calls Tail.
-       * @function tail
-       * @memberof logproto.Querier
-       * @instance
-       * @param {logproto.ITailRequest} request TailRequest message or plain object
-       * @returns {Promise<logproto.TailResponse>} Promise
-       * @variation 2
-       */
-            /**
-             * Callback as used by {@link logproto.Querier#series}.
-             * @memberof logproto.Querier
-             * @typedef SeriesCallback
-             * @type {function}
-             * @param {Error|null} error Error, if any
-             * @param {logproto.SeriesResponse} [response] SeriesResponse
-             */
-            /**
-             * Calls Series.
-             * @function series
-             * @memberof logproto.Querier
-             * @instance
-             * @param {logproto.ISeriesRequest} request SeriesRequest message or plain object
-             * @param {logproto.Querier.SeriesCallback} callback Node-style callback called with the error, if any, and SeriesResponse
-             * @returns {undefined}
-             * @variation 1
-             */
-            Object.defineProperty((Querier.prototype.series = function series(request, callback) {
+            Object.defineProperty(Querier.prototype.series = function series(request, callback) {
                 return this.rpcCall(series, $root.logproto.SeriesRequest, $root.logproto.SeriesResponse, request, callback);
-            }), 'name', { value: 'Series' }
+            }, "name", { value: "Series" });
             /**
-       * Calls Series.
-       * @function series
-       * @memberof logproto.Querier
-       * @instance
-       * @param {logproto.ISeriesRequest} request SeriesRequest message or plain object
-       * @returns {Promise<logproto.SeriesResponse>} Promise
-       * @variation 2
-       */
+             * Calls Series.
+             * @function series
+             * @memberof logproto.Querier
+             * @instance
+             * @param {logproto.ISeriesRequest} request SeriesRequest message or plain object
+             * @returns {Promise<logproto.SeriesResponse>} Promise
+             * @variation 2
+             */
             /**
              * Callback as used by {@link logproto.Querier#tailersCount}.
              * @memberof logproto.Querier
@@ -390,46 +274,18 @@
              * @returns {undefined}
              * @variation 1
              */
-            , 
-            /**
-       * Calls Series.
-       * @function series
-       * @memberof logproto.Querier
-       * @instance
-       * @param {logproto.ISeriesRequest} request SeriesRequest message or plain object
-       * @returns {Promise<logproto.SeriesResponse>} Promise
-       * @variation 2
-       */
-            /**
-             * Callback as used by {@link logproto.Querier#tailersCount}.
-             * @memberof logproto.Querier
-             * @typedef TailersCountCallback
-             * @type {function}
-             * @param {Error|null} error Error, if any
-             * @param {logproto.TailersCountResponse} [response] TailersCountResponse
-             */
-            /**
-             * Calls TailersCount.
-             * @function tailersCount
-             * @memberof logproto.Querier
-             * @instance
-             * @param {logproto.ITailersCountRequest} request TailersCountRequest message or plain object
-             * @param {logproto.Querier.TailersCountCallback} callback Node-style callback called with the error, if any, and TailersCountResponse
-             * @returns {undefined}
-             * @variation 1
-             */
-            Object.defineProperty((Querier.prototype.tailersCount = function tailersCount(request, callback) {
+            Object.defineProperty(Querier.prototype.tailersCount = function tailersCount(request, callback) {
                 return this.rpcCall(tailersCount, $root.logproto.TailersCountRequest, $root.logproto.TailersCountResponse, request, callback);
-            }), 'name', { value: 'TailersCount' }
+            }, "name", { value: "TailersCount" });
             /**
-       * Calls TailersCount.
-       * @function tailersCount
-       * @memberof logproto.Querier
-       * @instance
-       * @param {logproto.ITailersCountRequest} request TailersCountRequest message or plain object
-       * @returns {Promise<logproto.TailersCountResponse>} Promise
-       * @variation 2
-       */
+             * Calls TailersCount.
+             * @function tailersCount
+             * @memberof logproto.Querier
+             * @instance
+             * @param {logproto.ITailersCountRequest} request TailersCountRequest message or plain object
+             * @returns {Promise<logproto.TailersCountResponse>} Promise
+             * @variation 2
+             */
             /**
              * Callback as used by {@link logproto.Querier#getChunkIDs}.
              * @memberof logproto.Querier
@@ -448,59 +304,31 @@
              * @returns {undefined}
              * @variation 1
              */
-            , 
-            /**
-       * Calls TailersCount.
-       * @function tailersCount
-       * @memberof logproto.Querier
-       * @instance
-       * @param {logproto.ITailersCountRequest} request TailersCountRequest message or plain object
-       * @returns {Promise<logproto.TailersCountResponse>} Promise
-       * @variation 2
-       */
-            /**
-             * Callback as used by {@link logproto.Querier#getChunkIDs}.
-             * @memberof logproto.Querier
-             * @typedef GetChunkIDsCallback
-             * @type {function}
-             * @param {Error|null} error Error, if any
-             * @param {logproto.GetChunkIDsResponse} [response] GetChunkIDsResponse
-             */
-            /**
-             * Calls GetChunkIDs.
-             * @function getChunkIDs
-             * @memberof logproto.Querier
-             * @instance
-             * @param {logproto.IGetChunkIDsRequest} request GetChunkIDsRequest message or plain object
-             * @param {logproto.Querier.GetChunkIDsCallback} callback Node-style callback called with the error, if any, and GetChunkIDsResponse
-             * @returns {undefined}
-             * @variation 1
-             */
-            Object.defineProperty((Querier.prototype.getChunkIDs = function getChunkIDs(request, callback) {
+            Object.defineProperty(Querier.prototype.getChunkIDs = function getChunkIDs(request, callback) {
                 return this.rpcCall(getChunkIDs, $root.logproto.GetChunkIDsRequest, $root.logproto.GetChunkIDsResponse, request, callback);
-            }), 'name', { value: 'GetChunkIDs' })))))));
+            }, "name", { value: "GetChunkIDs" });
             /**
-       * Calls GetChunkIDs.
-       * @function getChunkIDs
-       * @memberof logproto.Querier
-       * @instance
-       * @param {logproto.IGetChunkIDsRequest} request GetChunkIDsRequest message or plain object
-       * @returns {Promise<logproto.GetChunkIDsResponse>} Promise
-       * @variation 2
-       */
+             * Calls GetChunkIDs.
+             * @function getChunkIDs
+             * @memberof logproto.Querier
+             * @instance
+             * @param {logproto.IGetChunkIDsRequest} request GetChunkIDsRequest message or plain object
+             * @returns {Promise<logproto.GetChunkIDsResponse>} Promise
+             * @variation 2
+             */
             return Querier;
         })();
         logproto.Ingester = (function () {
             /**
-       * Constructs a new Ingester service.
-       * @memberof logproto
-       * @classdesc Represents an Ingester
-       * @extends $protobuf.rpc.Service
-       * @constructor
-       * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
-       * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
-       * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
-       */
+             * Constructs a new Ingester service.
+             * @memberof logproto
+             * @classdesc Represents an Ingester
+             * @extends $protobuf.rpc.Service
+             * @constructor
+             * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
+             * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
+             * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
+             */
             function Ingester(rpcImpl, requestDelimited, responseDelimited) {
                 $protobuf.rpc.Service.call(this, rpcImpl, requestDelimited, responseDelimited);
             }
@@ -536,27 +364,27 @@
              * @returns {undefined}
              * @variation 1
              */
-            Object.defineProperty((Ingester.prototype.transferChunks = function transferChunks(request, callback) {
+            Object.defineProperty(Ingester.prototype.transferChunks = function transferChunks(request, callback) {
                 return this.rpcCall(transferChunks, $root.logproto.TimeSeriesChunk, $root.logproto.TransferChunksResponse, request, callback);
-            }), 'name', { value: 'TransferChunks' });
+            }, "name", { value: "TransferChunks" });
             /**
-       * Calls TransferChunks.
-       * @function transferChunks
-       * @memberof logproto.Ingester
-       * @instance
-       * @param {logproto.ITimeSeriesChunk} request TimeSeriesChunk message or plain object
-       * @returns {Promise<logproto.TransferChunksResponse>} Promise
-       * @variation 2
-       */
+             * Calls TransferChunks.
+             * @function transferChunks
+             * @memberof logproto.Ingester
+             * @instance
+             * @param {logproto.ITimeSeriesChunk} request TimeSeriesChunk message or plain object
+             * @returns {Promise<logproto.TransferChunksResponse>} Promise
+             * @variation 2
+             */
             return Ingester;
         })();
         logproto.PushRequest = (function () {
             /**
-       * Properties of a PushRequest.
-       * @memberof logproto
-       * @interface IPushRequest
-       * @property {Array.<logproto.IStreamAdapter>|null} [streams] PushRequest streams
-       */
+             * Properties of a PushRequest.
+             * @memberof logproto
+             * @interface IPushRequest
+             * @property {Array.<logproto.IStreamAdapter>|null} [streams] PushRequest streams
+             */
             /**
              * Constructs a new PushRequest.
              * @memberof logproto
@@ -673,15 +501,15 @@
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
             PushRequest.verify = function verify(message) {
-                if (typeof message !== 'object' || message === null)
-                    return 'object expected';
-                if (message.streams != null && message.hasOwnProperty('streams')) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.streams != null && message.hasOwnProperty("streams")) {
                     if (!Array.isArray(message.streams))
-                        return 'streams: array expected';
+                        return "streams: array expected";
                     for (var i = 0; i < message.streams.length; ++i) {
                         var error = $root.logproto.StreamAdapter.verify(message.streams[i]);
                         if (error)
-                            return 'streams.' + error;
+                            return "streams." + error;
                     }
                 }
                 return null;
@@ -700,11 +528,11 @@
                 var message = new $root.logproto.PushRequest();
                 if (object.streams) {
                     if (!Array.isArray(object.streams))
-                        throw TypeError('.logproto.PushRequest.streams: array expected');
+                        throw TypeError(".logproto.PushRequest.streams: array expected");
                     message.streams = [];
                     for (var i = 0; i < object.streams.length; ++i) {
-                        if (typeof object.streams[i] !== 'object')
-                            throw TypeError('.logproto.PushRequest.streams: object expected');
+                        if (typeof object.streams[i] !== "object")
+                            throw TypeError(".logproto.PushRequest.streams: object expected");
                         message.streams[i] = $root.logproto.StreamAdapter.fromObject(object.streams[i]);
                     }
                 }
@@ -746,10 +574,10 @@
         })();
         logproto.PushResponse = (function () {
             /**
-       * Properties of a PushResponse.
-       * @memberof logproto
-       * @interface IPushResponse
-       */
+             * Properties of a PushResponse.
+             * @memberof logproto
+             * @interface IPushResponse
+             */
             /**
              * Constructs a new PushResponse.
              * @memberof logproto
@@ -850,8 +678,8 @@
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
             PushResponse.verify = function verify(message) {
-                if (typeof message !== 'object' || message === null)
-                    return 'object expected';
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
                 return null;
             };
             /**
@@ -893,16 +721,16 @@
         })();
         logproto.QueryRequest = (function () {
             /**
-       * Properties of a QueryRequest.
-       * @memberof logproto
-       * @interface IQueryRequest
-       * @property {string|null} [selector] QueryRequest selector
-       * @property {number|null} [limit] QueryRequest limit
-       * @property {google.protobuf.ITimestamp|null} [start] QueryRequest start
-       * @property {google.protobuf.ITimestamp|null} [end] QueryRequest end
-       * @property {logproto.Direction|null} [direction] QueryRequest direction
-       * @property {Array.<string>|null} [shards] QueryRequest shards
-       */
+             * Properties of a QueryRequest.
+             * @memberof logproto
+             * @interface IQueryRequest
+             * @property {string|null} [selector] QueryRequest selector
+             * @property {number|null} [limit] QueryRequest limit
+             * @property {google.protobuf.ITimestamp|null} [start] QueryRequest start
+             * @property {google.protobuf.ITimestamp|null} [end] QueryRequest end
+             * @property {logproto.Direction|null} [direction] QueryRequest direction
+             * @property {Array.<string>|null} [shards] QueryRequest shards
+             */
             /**
              * Constructs a new QueryRequest.
              * @memberof logproto
@@ -924,7 +752,7 @@
              * @memberof logproto.QueryRequest
              * @instance
              */
-            QueryRequest.prototype.selector = '';
+            QueryRequest.prototype.selector = "";
             /**
              * QueryRequest limit.
              * @member {number} limit
@@ -983,19 +811,15 @@
             QueryRequest.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.selector != null &&
-                    Object.hasOwnProperty.call(message, 'selector'))
+                if (message.selector != null && Object.hasOwnProperty.call(message, "selector"))
                     writer.uint32(/* id 1, wireType 2 =*/ 10).string(message.selector);
-                if (message.limit != null &&
-                    Object.hasOwnProperty.call(message, 'limit'))
+                if (message.limit != null && Object.hasOwnProperty.call(message, "limit"))
                     writer.uint32(/* id 2, wireType 0 =*/ 16).uint32(message.limit);
-                if (message.start != null &&
-                    Object.hasOwnProperty.call(message, 'start'))
+                if (message.start != null && Object.hasOwnProperty.call(message, "start"))
                     $root.google.protobuf.Timestamp.encode(message.start, writer.uint32(/* id 3, wireType 2 =*/ 26).fork()).ldelim();
-                if (message.end != null && Object.hasOwnProperty.call(message, 'end'))
+                if (message.end != null && Object.hasOwnProperty.call(message, "end"))
                     $root.google.protobuf.Timestamp.encode(message.end, writer.uint32(/* id 4, wireType 2 =*/ 34).fork()).ldelim();
-                if (message.direction != null &&
-                    Object.hasOwnProperty.call(message, 'direction'))
+                if (message.direction != null && Object.hasOwnProperty.call(message, "direction"))
                     writer.uint32(/* id 5, wireType 0 =*/ 40).int32(message.direction);
                 if (message.shards != null && message.shards.length)
                     for (var i = 0; i < message.shards.length; ++i)
@@ -1083,38 +907,38 @@
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
             QueryRequest.verify = function verify(message) {
-                if (typeof message !== 'object' || message === null)
-                    return 'object expected';
-                if (message.selector != null && message.hasOwnProperty('selector'))
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.selector != null && message.hasOwnProperty("selector"))
                     if (!$util.isString(message.selector))
-                        return 'selector: string expected';
-                if (message.limit != null && message.hasOwnProperty('limit'))
+                        return "selector: string expected";
+                if (message.limit != null && message.hasOwnProperty("limit"))
                     if (!$util.isInteger(message.limit))
-                        return 'limit: integer expected';
-                if (message.start != null && message.hasOwnProperty('start')) {
+                        return "limit: integer expected";
+                if (message.start != null && message.hasOwnProperty("start")) {
                     var error = $root.google.protobuf.Timestamp.verify(message.start);
                     if (error)
-                        return 'start.' + error;
+                        return "start." + error;
                 }
-                if (message.end != null && message.hasOwnProperty('end')) {
+                if (message.end != null && message.hasOwnProperty("end")) {
                     var error = $root.google.protobuf.Timestamp.verify(message.end);
                     if (error)
-                        return 'end.' + error;
+                        return "end." + error;
                 }
-                if (message.direction != null && message.hasOwnProperty('direction'))
+                if (message.direction != null && message.hasOwnProperty("direction"))
                     switch (message.direction) {
                         default:
-                            return 'direction: enum value expected';
+                            return "direction: enum value expected";
                         case 0:
                         case 1:
                             break;
                     }
-                if (message.shards != null && message.hasOwnProperty('shards')) {
+                if (message.shards != null && message.hasOwnProperty("shards")) {
                     if (!Array.isArray(message.shards))
-                        return 'shards: array expected';
+                        return "shards: array expected";
                     for (var i = 0; i < message.shards.length; ++i)
                         if (!$util.isString(message.shards[i]))
-                            return 'shards: string[] expected';
+                            return "shards: string[] expected";
                 }
                 return null;
             };
@@ -1135,28 +959,28 @@
                 if (object.limit != null)
                     message.limit = object.limit >>> 0;
                 if (object.start != null) {
-                    if (typeof object.start !== 'object')
-                        throw TypeError('.logproto.QueryRequest.start: object expected');
+                    if (typeof object.start !== "object")
+                        throw TypeError(".logproto.QueryRequest.start: object expected");
                     message.start = $root.google.protobuf.Timestamp.fromObject(object.start);
                 }
                 if (object.end != null) {
-                    if (typeof object.end !== 'object')
-                        throw TypeError('.logproto.QueryRequest.end: object expected');
+                    if (typeof object.end !== "object")
+                        throw TypeError(".logproto.QueryRequest.end: object expected");
                     message.end = $root.google.protobuf.Timestamp.fromObject(object.end);
                 }
                 switch (object.direction) {
-                    case 'FORWARD':
+                    case "FORWARD":
                     case 0:
                         message.direction = 0;
                         break;
-                    case 'BACKWARD':
+                    case "BACKWARD":
                     case 1:
                         message.direction = 1;
                         break;
                 }
                 if (object.shards) {
                     if (!Array.isArray(object.shards))
-                        throw TypeError('.logproto.QueryRequest.shards: array expected');
+                        throw TypeError(".logproto.QueryRequest.shards: array expected");
                     message.shards = [];
                     for (var i = 0; i < object.shards.length; ++i)
                         message.shards[i] = String(object.shards[i]);
@@ -1179,25 +1003,22 @@
                 if (options.arrays || options.defaults)
                     object.shards = [];
                 if (options.defaults) {
-                    object.selector = '';
+                    object.selector = "";
                     object.limit = 0;
                     object.start = null;
                     object.end = null;
-                    object.direction = options.enums === String ? 'FORWARD' : 0;
+                    object.direction = options.enums === String ? "FORWARD" : 0;
                 }
-                if (message.selector != null && message.hasOwnProperty('selector'))
+                if (message.selector != null && message.hasOwnProperty("selector"))
                     object.selector = message.selector;
-                if (message.limit != null && message.hasOwnProperty('limit'))
+                if (message.limit != null && message.hasOwnProperty("limit"))
                     object.limit = message.limit;
-                if (message.start != null && message.hasOwnProperty('start'))
+                if (message.start != null && message.hasOwnProperty("start"))
                     object.start = $root.google.protobuf.Timestamp.toObject(message.start, options);
-                if (message.end != null && message.hasOwnProperty('end'))
+                if (message.end != null && message.hasOwnProperty("end"))
                     object.end = $root.google.protobuf.Timestamp.toObject(message.end, options);
-                if (message.direction != null && message.hasOwnProperty('direction'))
-                    object.direction =
-                        options.enums === String
-                            ? $root.logproto.Direction[message.direction]
-                            : message.direction;
+                if (message.direction != null && message.hasOwnProperty("direction"))
+                    object.direction = options.enums === String ? $root.logproto.Direction[message.direction] : message.direction;
                 if (message.shards && message.shards.length) {
                     object.shards = [];
                     for (var j = 0; j < message.shards.length; ++j)
@@ -1219,14 +1040,14 @@
         })();
         logproto.SampleQueryRequest = (function () {
             /**
-       * Properties of a SampleQueryRequest.
-       * @memberof logproto
-       * @interface ISampleQueryRequest
-       * @property {string|null} [selector] SampleQueryRequest selector
-       * @property {google.protobuf.ITimestamp|null} [start] SampleQueryRequest start
-       * @property {google.protobuf.ITimestamp|null} [end] SampleQueryRequest end
-       * @property {Array.<string>|null} [shards] SampleQueryRequest shards
-       */
+             * Properties of a SampleQueryRequest.
+             * @memberof logproto
+             * @interface ISampleQueryRequest
+             * @property {string|null} [selector] SampleQueryRequest selector
+             * @property {google.protobuf.ITimestamp|null} [start] SampleQueryRequest start
+             * @property {google.protobuf.ITimestamp|null} [end] SampleQueryRequest end
+             * @property {Array.<string>|null} [shards] SampleQueryRequest shards
+             */
             /**
              * Constructs a new SampleQueryRequest.
              * @memberof logproto
@@ -1248,7 +1069,7 @@
              * @memberof logproto.SampleQueryRequest
              * @instance
              */
-            SampleQueryRequest.prototype.selector = '';
+            SampleQueryRequest.prototype.selector = "";
             /**
              * SampleQueryRequest start.
              * @member {google.protobuf.ITimestamp|null|undefined} start
@@ -1293,13 +1114,11 @@
             SampleQueryRequest.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.selector != null &&
-                    Object.hasOwnProperty.call(message, 'selector'))
+                if (message.selector != null && Object.hasOwnProperty.call(message, "selector"))
                     writer.uint32(/* id 1, wireType 2 =*/ 10).string(message.selector);
-                if (message.start != null &&
-                    Object.hasOwnProperty.call(message, 'start'))
+                if (message.start != null && Object.hasOwnProperty.call(message, "start"))
                     $root.google.protobuf.Timestamp.encode(message.start, writer.uint32(/* id 2, wireType 2 =*/ 18).fork()).ldelim();
-                if (message.end != null && Object.hasOwnProperty.call(message, 'end'))
+                if (message.end != null && Object.hasOwnProperty.call(message, "end"))
                     $root.google.protobuf.Timestamp.encode(message.end, writer.uint32(/* id 3, wireType 2 =*/ 26).fork()).ldelim();
                 if (message.shards != null && message.shards.length)
                     for (var i = 0; i < message.shards.length; ++i)
@@ -1381,27 +1200,27 @@
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
             SampleQueryRequest.verify = function verify(message) {
-                if (typeof message !== 'object' || message === null)
-                    return 'object expected';
-                if (message.selector != null && message.hasOwnProperty('selector'))
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.selector != null && message.hasOwnProperty("selector"))
                     if (!$util.isString(message.selector))
-                        return 'selector: string expected';
-                if (message.start != null && message.hasOwnProperty('start')) {
+                        return "selector: string expected";
+                if (message.start != null && message.hasOwnProperty("start")) {
                     var error = $root.google.protobuf.Timestamp.verify(message.start);
                     if (error)
-                        return 'start.' + error;
+                        return "start." + error;
                 }
-                if (message.end != null && message.hasOwnProperty('end')) {
+                if (message.end != null && message.hasOwnProperty("end")) {
                     var error = $root.google.protobuf.Timestamp.verify(message.end);
                     if (error)
-                        return 'end.' + error;
+                        return "end." + error;
                 }
-                if (message.shards != null && message.hasOwnProperty('shards')) {
+                if (message.shards != null && message.hasOwnProperty("shards")) {
                     if (!Array.isArray(message.shards))
-                        return 'shards: array expected';
+                        return "shards: array expected";
                     for (var i = 0; i < message.shards.length; ++i)
                         if (!$util.isString(message.shards[i]))
-                            return 'shards: string[] expected';
+                            return "shards: string[] expected";
                 }
                 return null;
             };
@@ -1420,18 +1239,18 @@
                 if (object.selector != null)
                     message.selector = String(object.selector);
                 if (object.start != null) {
-                    if (typeof object.start !== 'object')
-                        throw TypeError('.logproto.SampleQueryRequest.start: object expected');
+                    if (typeof object.start !== "object")
+                        throw TypeError(".logproto.SampleQueryRequest.start: object expected");
                     message.start = $root.google.protobuf.Timestamp.fromObject(object.start);
                 }
                 if (object.end != null) {
-                    if (typeof object.end !== 'object')
-                        throw TypeError('.logproto.SampleQueryRequest.end: object expected');
+                    if (typeof object.end !== "object")
+                        throw TypeError(".logproto.SampleQueryRequest.end: object expected");
                     message.end = $root.google.protobuf.Timestamp.fromObject(object.end);
                 }
                 if (object.shards) {
                     if (!Array.isArray(object.shards))
-                        throw TypeError('.logproto.SampleQueryRequest.shards: array expected');
+                        throw TypeError(".logproto.SampleQueryRequest.shards: array expected");
                     message.shards = [];
                     for (var i = 0; i < object.shards.length; ++i)
                         message.shards[i] = String(object.shards[i]);
@@ -1454,15 +1273,15 @@
                 if (options.arrays || options.defaults)
                     object.shards = [];
                 if (options.defaults) {
-                    object.selector = '';
+                    object.selector = "";
                     object.start = null;
                     object.end = null;
                 }
-                if (message.selector != null && message.hasOwnProperty('selector'))
+                if (message.selector != null && message.hasOwnProperty("selector"))
                     object.selector = message.selector;
-                if (message.start != null && message.hasOwnProperty('start'))
+                if (message.start != null && message.hasOwnProperty("start"))
                     object.start = $root.google.protobuf.Timestamp.toObject(message.start, options);
-                if (message.end != null && message.hasOwnProperty('end'))
+                if (message.end != null && message.hasOwnProperty("end"))
                     object.end = $root.google.protobuf.Timestamp.toObject(message.end, options);
                 if (message.shards && message.shards.length) {
                     object.shards = [];
@@ -1485,11 +1304,11 @@
         })();
         logproto.SampleQueryResponse = (function () {
             /**
-       * Properties of a SampleQueryResponse.
-       * @memberof logproto
-       * @interface ISampleQueryResponse
-       * @property {Array.<logproto.ISeries>|null} [series] SampleQueryResponse series
-       */
+             * Properties of a SampleQueryResponse.
+             * @memberof logproto
+             * @interface ISampleQueryResponse
+             * @property {Array.<logproto.ISeries>|null} [series] SampleQueryResponse series
+             */
             /**
              * Constructs a new SampleQueryResponse.
              * @memberof logproto
@@ -1606,15 +1425,15 @@
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
             SampleQueryResponse.verify = function verify(message) {
-                if (typeof message !== 'object' || message === null)
-                    return 'object expected';
-                if (message.series != null && message.hasOwnProperty('series')) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.series != null && message.hasOwnProperty("series")) {
                     if (!Array.isArray(message.series))
-                        return 'series: array expected';
+                        return "series: array expected";
                     for (var i = 0; i < message.series.length; ++i) {
                         var error = $root.logproto.Series.verify(message.series[i]);
                         if (error)
-                            return 'series.' + error;
+                            return "series." + error;
                     }
                 }
                 return null;
@@ -1633,11 +1452,11 @@
                 var message = new $root.logproto.SampleQueryResponse();
                 if (object.series) {
                     if (!Array.isArray(object.series))
-                        throw TypeError('.logproto.SampleQueryResponse.series: array expected');
+                        throw TypeError(".logproto.SampleQueryResponse.series: array expected");
                     message.series = [];
                     for (var i = 0; i < object.series.length; ++i) {
-                        if (typeof object.series[i] !== 'object')
-                            throw TypeError('.logproto.SampleQueryResponse.series: object expected');
+                        if (typeof object.series[i] !== "object")
+                            throw TypeError(".logproto.SampleQueryResponse.series: object expected");
                         message.series[i] = $root.logproto.Series.fromObject(object.series[i]);
                     }
                 }
@@ -1686,8 +1505,8 @@
          */
         logproto.Direction = (function () {
             var valuesById = {}, values = Object.create(valuesById);
-            values[(valuesById[0] = 'FORWARD')] = 0;
-            values[(valuesById[1] = 'BACKWARD')] = 1;
+            values[valuesById[0] = "FORWARD"] = 0;
+            values[valuesById[1] = "BACKWARD"] = 1;
             return values;
         })();
         logproto.QueryResponse = (function () {
@@ -1813,15 +1632,15 @@
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
             QueryResponse.verify = function verify(message) {
-                if (typeof message !== 'object' || message === null)
-                    return 'object expected';
-                if (message.streams != null && message.hasOwnProperty('streams')) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.streams != null && message.hasOwnProperty("streams")) {
                     if (!Array.isArray(message.streams))
-                        return 'streams: array expected';
+                        return "streams: array expected";
                     for (var i = 0; i < message.streams.length; ++i) {
                         var error = $root.logproto.StreamAdapter.verify(message.streams[i]);
                         if (error)
-                            return 'streams.' + error;
+                            return "streams." + error;
                     }
                 }
                 return null;
@@ -1840,11 +1659,11 @@
                 var message = new $root.logproto.QueryResponse();
                 if (object.streams) {
                     if (!Array.isArray(object.streams))
-                        throw TypeError('.logproto.QueryResponse.streams: array expected');
+                        throw TypeError(".logproto.QueryResponse.streams: array expected");
                     message.streams = [];
                     for (var i = 0; i < object.streams.length; ++i) {
-                        if (typeof object.streams[i] !== 'object')
-                            throw TypeError('.logproto.QueryResponse.streams: object expected');
+                        if (typeof object.streams[i] !== "object")
+                            throw TypeError(".logproto.QueryResponse.streams: object expected");
                         message.streams[i] = $root.logproto.StreamAdapter.fromObject(object.streams[i]);
                     }
                 }
@@ -1886,14 +1705,14 @@
         })();
         logproto.LabelRequest = (function () {
             /**
-       * Properties of a LabelRequest.
-       * @memberof logproto
-       * @interface ILabelRequest
-       * @property {string|null} [name] LabelRequest name
-       * @property {boolean|null} [values] LabelRequest values
-       * @property {google.protobuf.ITimestamp|null} [start] LabelRequest start
-       * @property {google.protobuf.ITimestamp|null} [end] LabelRequest end
-       */
+             * Properties of a LabelRequest.
+             * @memberof logproto
+             * @interface ILabelRequest
+             * @property {string|null} [name] LabelRequest name
+             * @property {boolean|null} [values] LabelRequest values
+             * @property {google.protobuf.ITimestamp|null} [start] LabelRequest start
+             * @property {google.protobuf.ITimestamp|null} [end] LabelRequest end
+             */
             /**
              * Constructs a new LabelRequest.
              * @memberof logproto
@@ -1914,7 +1733,7 @@
              * @memberof logproto.LabelRequest
              * @instance
              */
-            LabelRequest.prototype.name = '';
+            LabelRequest.prototype.name = "";
             /**
              * LabelRequest values.
              * @member {boolean} values
@@ -1959,15 +1778,13 @@
             LabelRequest.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.name != null && Object.hasOwnProperty.call(message, 'name'))
+                if (message.name != null && Object.hasOwnProperty.call(message, "name"))
                     writer.uint32(/* id 1, wireType 2 =*/ 10).string(message.name);
-                if (message.values != null &&
-                    Object.hasOwnProperty.call(message, 'values'))
+                if (message.values != null && Object.hasOwnProperty.call(message, "values"))
                     writer.uint32(/* id 2, wireType 0 =*/ 16).bool(message.values);
-                if (message.start != null &&
-                    Object.hasOwnProperty.call(message, 'start'))
+                if (message.start != null && Object.hasOwnProperty.call(message, "start"))
                     $root.google.protobuf.Timestamp.encode(message.start, writer.uint32(/* id 3, wireType 2 =*/ 26).fork()).ldelim();
-                if (message.end != null && Object.hasOwnProperty.call(message, 'end'))
+                if (message.end != null && Object.hasOwnProperty.call(message, "end"))
                     $root.google.protobuf.Timestamp.encode(message.end, writer.uint32(/* id 4, wireType 2 =*/ 34).fork()).ldelim();
                 return writer;
             };
@@ -2044,23 +1861,23 @@
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
             LabelRequest.verify = function verify(message) {
-                if (typeof message !== 'object' || message === null)
-                    return 'object expected';
-                if (message.name != null && message.hasOwnProperty('name'))
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.name != null && message.hasOwnProperty("name"))
                     if (!$util.isString(message.name))
-                        return 'name: string expected';
-                if (message.values != null && message.hasOwnProperty('values'))
-                    if (typeof message.values !== 'boolean')
-                        return 'values: boolean expected';
-                if (message.start != null && message.hasOwnProperty('start')) {
+                        return "name: string expected";
+                if (message.values != null && message.hasOwnProperty("values"))
+                    if (typeof message.values !== "boolean")
+                        return "values: boolean expected";
+                if (message.start != null && message.hasOwnProperty("start")) {
                     var error = $root.google.protobuf.Timestamp.verify(message.start);
                     if (error)
-                        return 'start.' + error;
+                        return "start." + error;
                 }
-                if (message.end != null && message.hasOwnProperty('end')) {
+                if (message.end != null && message.hasOwnProperty("end")) {
                     var error = $root.google.protobuf.Timestamp.verify(message.end);
                     if (error)
-                        return 'end.' + error;
+                        return "end." + error;
                 }
                 return null;
             };
@@ -2081,13 +1898,13 @@
                 if (object.values != null)
                     message.values = Boolean(object.values);
                 if (object.start != null) {
-                    if (typeof object.start !== 'object')
-                        throw TypeError('.logproto.LabelRequest.start: object expected');
+                    if (typeof object.start !== "object")
+                        throw TypeError(".logproto.LabelRequest.start: object expected");
                     message.start = $root.google.protobuf.Timestamp.fromObject(object.start);
                 }
                 if (object.end != null) {
-                    if (typeof object.end !== 'object')
-                        throw TypeError('.logproto.LabelRequest.end: object expected');
+                    if (typeof object.end !== "object")
+                        throw TypeError(".logproto.LabelRequest.end: object expected");
                     message.end = $root.google.protobuf.Timestamp.fromObject(object.end);
                 }
                 return message;
@@ -2106,18 +1923,18 @@
                     options = {};
                 var object = {};
                 if (options.defaults) {
-                    object.name = '';
+                    object.name = "";
                     object.values = false;
                     object.start = null;
                     object.end = null;
                 }
-                if (message.name != null && message.hasOwnProperty('name'))
+                if (message.name != null && message.hasOwnProperty("name"))
                     object.name = message.name;
-                if (message.values != null && message.hasOwnProperty('values'))
+                if (message.values != null && message.hasOwnProperty("values"))
                     object.values = message.values;
-                if (message.start != null && message.hasOwnProperty('start'))
+                if (message.start != null && message.hasOwnProperty("start"))
                     object.start = $root.google.protobuf.Timestamp.toObject(message.start, options);
-                if (message.end != null && message.hasOwnProperty('end'))
+                if (message.end != null && message.hasOwnProperty("end"))
                     object.end = $root.google.protobuf.Timestamp.toObject(message.end, options);
                 return object;
             };
@@ -2135,11 +1952,11 @@
         })();
         logproto.LabelResponse = (function () {
             /**
-       * Properties of a LabelResponse.
-       * @memberof logproto
-       * @interface ILabelResponse
-       * @property {Array.<string>|null} [values] LabelResponse values
-       */
+             * Properties of a LabelResponse.
+             * @memberof logproto
+             * @interface ILabelResponse
+             * @property {Array.<string>|null} [values] LabelResponse values
+             */
             /**
              * Constructs a new LabelResponse.
              * @memberof logproto
@@ -2256,14 +2073,14 @@
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
             LabelResponse.verify = function verify(message) {
-                if (typeof message !== 'object' || message === null)
-                    return 'object expected';
-                if (message.values != null && message.hasOwnProperty('values')) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.values != null && message.hasOwnProperty("values")) {
                     if (!Array.isArray(message.values))
-                        return 'values: array expected';
+                        return "values: array expected";
                     for (var i = 0; i < message.values.length; ++i)
                         if (!$util.isString(message.values[i]))
-                            return 'values: string[] expected';
+                            return "values: string[] expected";
                 }
                 return null;
             };
@@ -2281,7 +2098,7 @@
                 var message = new $root.logproto.LabelResponse();
                 if (object.values) {
                     if (!Array.isArray(object.values))
-                        throw TypeError('.logproto.LabelResponse.values: array expected');
+                        throw TypeError(".logproto.LabelResponse.values: array expected");
                     message.values = [];
                     for (var i = 0; i < object.values.length; ++i)
                         message.values[i] = String(object.values[i]);
@@ -2324,12 +2141,12 @@
         })();
         logproto.StreamAdapter = (function () {
             /**
-       * Properties of a StreamAdapter.
-       * @memberof logproto
-       * @interface IStreamAdapter
-       * @property {string|null} [labels] StreamAdapter labels
-       * @property {Array.<logproto.IEntryAdapter>|null} [entries] StreamAdapter entries
-       */
+             * Properties of a StreamAdapter.
+             * @memberof logproto
+             * @interface IStreamAdapter
+             * @property {string|null} [labels] StreamAdapter labels
+             * @property {Array.<logproto.IEntryAdapter>|null} [entries] StreamAdapter entries
+             */
             /**
              * Constructs a new StreamAdapter.
              * @memberof logproto
@@ -2351,7 +2168,7 @@
              * @memberof logproto.StreamAdapter
              * @instance
              */
-            StreamAdapter.prototype.labels = '';
+            StreamAdapter.prototype.labels = "";
             /**
              * StreamAdapter entries.
              * @member {Array.<logproto.IEntryAdapter>} entries
@@ -2382,8 +2199,7 @@
             StreamAdapter.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.labels != null &&
-                    Object.hasOwnProperty.call(message, 'labels'))
+                if (message.labels != null && Object.hasOwnProperty.call(message, "labels"))
                     writer.uint32(/* id 1, wireType 2 =*/ 10).string(message.labels);
                 if (message.entries != null && message.entries.length)
                     for (var i = 0; i < message.entries.length; ++i)
@@ -2459,18 +2275,18 @@
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
             StreamAdapter.verify = function verify(message) {
-                if (typeof message !== 'object' || message === null)
-                    return 'object expected';
-                if (message.labels != null && message.hasOwnProperty('labels'))
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.labels != null && message.hasOwnProperty("labels"))
                     if (!$util.isString(message.labels))
-                        return 'labels: string expected';
-                if (message.entries != null && message.hasOwnProperty('entries')) {
+                        return "labels: string expected";
+                if (message.entries != null && message.hasOwnProperty("entries")) {
                     if (!Array.isArray(message.entries))
-                        return 'entries: array expected';
+                        return "entries: array expected";
                     for (var i = 0; i < message.entries.length; ++i) {
                         var error = $root.logproto.EntryAdapter.verify(message.entries[i]);
                         if (error)
-                            return 'entries.' + error;
+                            return "entries." + error;
                     }
                 }
                 return null;
@@ -2491,11 +2307,11 @@
                     message.labels = String(object.labels);
                 if (object.entries) {
                     if (!Array.isArray(object.entries))
-                        throw TypeError('.logproto.StreamAdapter.entries: array expected');
+                        throw TypeError(".logproto.StreamAdapter.entries: array expected");
                     message.entries = [];
                     for (var i = 0; i < object.entries.length; ++i) {
-                        if (typeof object.entries[i] !== 'object')
-                            throw TypeError('.logproto.StreamAdapter.entries: object expected');
+                        if (typeof object.entries[i] !== "object")
+                            throw TypeError(".logproto.StreamAdapter.entries: object expected");
                         message.entries[i] = $root.logproto.EntryAdapter.fromObject(object.entries[i]);
                     }
                 }
@@ -2517,8 +2333,8 @@
                 if (options.arrays || options.defaults)
                     object.entries = [];
                 if (options.defaults)
-                    object.labels = '';
-                if (message.labels != null && message.hasOwnProperty('labels'))
+                    object.labels = "";
+                if (message.labels != null && message.hasOwnProperty("labels"))
                     object.labels = message.labels;
                 if (message.entries && message.entries.length) {
                     object.entries = [];
@@ -2541,12 +2357,12 @@
         })();
         logproto.EntryAdapter = (function () {
             /**
-       * Properties of an EntryAdapter.
-       * @memberof logproto
-       * @interface IEntryAdapter
-       * @property {google.protobuf.ITimestamp|null} [timestamp] EntryAdapter timestamp
-       * @property {string|null} [line] EntryAdapter line
-       */
+             * Properties of an EntryAdapter.
+             * @memberof logproto
+             * @interface IEntryAdapter
+             * @property {google.protobuf.ITimestamp|null} [timestamp] EntryAdapter timestamp
+             * @property {string|null} [line] EntryAdapter line
+             */
             /**
              * Constructs a new EntryAdapter.
              * @memberof logproto
@@ -2574,7 +2390,7 @@
              * @memberof logproto.EntryAdapter
              * @instance
              */
-            EntryAdapter.prototype.line = '';
+            EntryAdapter.prototype.line = "";
             /**
              * Creates a new EntryAdapter instance using the specified properties.
              * @function create
@@ -2598,10 +2414,9 @@
             EntryAdapter.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.timestamp != null &&
-                    Object.hasOwnProperty.call(message, 'timestamp'))
+                if (message.timestamp != null && Object.hasOwnProperty.call(message, "timestamp"))
                     $root.google.protobuf.Timestamp.encode(message.timestamp, writer.uint32(/* id 1, wireType 2 =*/ 10).fork()).ldelim();
-                if (message.line != null && Object.hasOwnProperty.call(message, 'line'))
+                if (message.line != null && Object.hasOwnProperty.call(message, "line"))
                     writer.uint32(/* id 2, wireType 2 =*/ 18).string(message.line);
                 return writer;
             };
@@ -2672,16 +2487,16 @@
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
             EntryAdapter.verify = function verify(message) {
-                if (typeof message !== 'object' || message === null)
-                    return 'object expected';
-                if (message.timestamp != null && message.hasOwnProperty('timestamp')) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.timestamp != null && message.hasOwnProperty("timestamp")) {
                     var error = $root.google.protobuf.Timestamp.verify(message.timestamp);
                     if (error)
-                        return 'timestamp.' + error;
+                        return "timestamp." + error;
                 }
-                if (message.line != null && message.hasOwnProperty('line'))
+                if (message.line != null && message.hasOwnProperty("line"))
                     if (!$util.isString(message.line))
-                        return 'line: string expected';
+                        return "line: string expected";
                 return null;
             };
             /**
@@ -2697,8 +2512,8 @@
                     return object;
                 var message = new $root.logproto.EntryAdapter();
                 if (object.timestamp != null) {
-                    if (typeof object.timestamp !== 'object')
-                        throw TypeError('.logproto.EntryAdapter.timestamp: object expected');
+                    if (typeof object.timestamp !== "object")
+                        throw TypeError(".logproto.EntryAdapter.timestamp: object expected");
                     message.timestamp = $root.google.protobuf.Timestamp.fromObject(object.timestamp);
                 }
                 if (object.line != null)
@@ -2720,11 +2535,11 @@
                 var object = {};
                 if (options.defaults) {
                     object.timestamp = null;
-                    object.line = '';
+                    object.line = "";
                 }
-                if (message.timestamp != null && message.hasOwnProperty('timestamp'))
+                if (message.timestamp != null && message.hasOwnProperty("timestamp"))
                     object.timestamp = $root.google.protobuf.Timestamp.toObject(message.timestamp, options);
-                if (message.line != null && message.hasOwnProperty('line'))
+                if (message.line != null && message.hasOwnProperty("line"))
                     object.line = message.line;
                 return object;
             };
@@ -2742,13 +2557,13 @@
         })();
         logproto.Sample = (function () {
             /**
-       * Properties of a Sample.
-       * @memberof logproto
-       * @interface ISample
-       * @property {number|Long|null} [timestamp] Sample timestamp
-       * @property {number|null} [value] Sample value
-       * @property {number|Long|null} [hash] Sample hash
-       */
+             * Properties of a Sample.
+             * @memberof logproto
+             * @interface ISample
+             * @property {number|Long|null} [timestamp] Sample timestamp
+             * @property {number|null} [value] Sample value
+             * @property {number|Long|null} [hash] Sample hash
+             */
             /**
              * Constructs a new Sample.
              * @memberof logproto
@@ -2769,16 +2584,13 @@
              * @memberof logproto.Sample
              * @instance
              */
-            Sample.prototype.timestamp = $util.Long
-                ? $util.Long.fromBits(0, 0, false)
-                :
-            ;
+            Sample.prototype.timestamp = $util.Long ? $util.Long.fromBits(0, 0, false) : 0;
             /**
-       * Sample value.
-       * @member {number} value
-       * @memberof logproto.Sample
-       * @instance
-       */
+             * Sample value.
+             * @member {number} value
+             * @memberof logproto.Sample
+             * @instance
+             */
             Sample.prototype.value = 0;
             /**
              * Sample hash.
@@ -2810,13 +2622,11 @@
             Sample.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.timestamp != null &&
-                    Object.hasOwnProperty.call(message, 'timestamp'))
+                if (message.timestamp != null && Object.hasOwnProperty.call(message, "timestamp"))
                     writer.uint32(/* id 1, wireType 0 =*/ 8).int64(message.timestamp);
-                if (message.value != null &&
-                    Object.hasOwnProperty.call(message, 'value'))
+                if (message.value != null && Object.hasOwnProperty.call(message, "value"))
                     writer.uint32(/* id 2, wireType 1 =*/ 17).double(message.value);
-                if (message.hash != null && Object.hasOwnProperty.call(message, 'hash'))
+                if (message.hash != null && Object.hasOwnProperty.call(message, "hash"))
                     writer.uint32(/* id 3, wireType 0 =*/ 24).uint64(message.hash);
                 return writer;
             };
@@ -2890,23 +2700,17 @@
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
             Sample.verify = function verify(message) {
-                if (typeof message !== 'object' || message === null)
-                    return 'object expected';
-                if (message.timestamp != null && message.hasOwnProperty('timestamp'))
-                    if (!$util.isInteger(message.timestamp) &&
-                        !(message.timestamp &&
-                            $util.isInteger(message.timestamp.low) &&
-                            $util.isInteger(message.timestamp.high)))
-                        return 'timestamp: integer|Long expected';
-                if (message.value != null && message.hasOwnProperty('value'))
-                    if (typeof message.value !== 'number')
-                        return 'value: number expected';
-                if (message.hash != null && message.hasOwnProperty('hash'))
-                    if (!$util.isInteger(message.hash) &&
-                        !(message.hash &&
-                            $util.isInteger(message.hash.low) &&
-                            $util.isInteger(message.hash.high)))
-                        return 'hash: integer|Long expected';
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.timestamp != null && message.hasOwnProperty("timestamp"))
+                    if (!$util.isInteger(message.timestamp) && !(message.timestamp && $util.isInteger(message.timestamp.low) && $util.isInteger(message.timestamp.high)))
+                        return "timestamp: integer|Long expected";
+                if (message.value != null && message.hasOwnProperty("value"))
+                    if (typeof message.value !== "number")
+                        return "value: number expected";
+                if (message.hash != null && message.hasOwnProperty("hash"))
+                    if (!$util.isInteger(message.hash) && !(message.hash && $util.isInteger(message.hash.low) && $util.isInteger(message.hash.high)))
+                        return "hash: integer|Long expected";
                 return null;
             };
             /**
@@ -2924,22 +2728,22 @@
                 if (object.timestamp != null)
                     if ($util.Long)
                         (message.timestamp = $util.Long.fromValue(object.timestamp)).unsigned = false;
-                    else if (typeof object.timestamp === 'string')
+                    else if (typeof object.timestamp === "string")
                         message.timestamp = parseInt(object.timestamp, 10);
-                    else if (typeof object.timestamp === 'number')
+                    else if (typeof object.timestamp === "number")
                         message.timestamp = object.timestamp;
-                    else if (typeof object.timestamp === 'object')
+                    else if (typeof object.timestamp === "object")
                         message.timestamp = new $util.LongBits(object.timestamp.low >>> 0, object.timestamp.high >>> 0).toNumber();
                 if (object.value != null)
                     message.value = Number(object.value);
                 if (object.hash != null)
                     if ($util.Long)
                         (message.hash = $util.Long.fromValue(object.hash)).unsigned = true;
-                    else if (typeof object.hash === 'string')
+                    else if (typeof object.hash === "string")
                         message.hash = parseInt(object.hash, 10);
-                    else if (typeof object.hash === 'number')
+                    else if (typeof object.hash === "number")
                         message.hash = object.hash;
-                    else if (typeof object.hash === 'object')
+                    else if (typeof object.hash === "object")
                         message.hash = new $util.LongBits(object.hash.low >>> 0, object.hash.high >>> 0).toNumber(true);
                 return message;
             };
@@ -2959,57 +2763,30 @@
                 if (options.defaults) {
                     if ($util.Long) {
                         var long = new $util.Long(0, 0, false);
-                        object.timestamp =
-                            options.longs === String
-                                ? long.toString()
-                                : options.longs === Number
-                                    ? long.toNumber()
-                                    : long;
+                        object.timestamp = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
                     }
                     else
-                        object.timestamp = options.longs === String ? '0' : 0;
+                        object.timestamp = options.longs === String ? "0" : 0;
                     object.value = 0;
                     if ($util.Long) {
                         var long = new $util.Long(0, 0, true);
-                        object.hash =
-                            options.longs === String
-                                ? long.toString()
-                                : options.longs === Number
-                                    ? long.toNumber()
-                                    : long;
+                        object.hash = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
                     }
                     else
-                        object.hash = options.longs === String ? '0' : 0;
+                        object.hash = options.longs === String ? "0" : 0;
                 }
-                if (message.timestamp != null && message.hasOwnProperty('timestamp'))
-                    if (typeof message.timestamp === 'number')
-                        object.timestamp =
-                            options.longs === String
-                                ? String(message.timestamp)
-                                : message.timestamp;
+                if (message.timestamp != null && message.hasOwnProperty("timestamp"))
+                    if (typeof message.timestamp === "number")
+                        object.timestamp = options.longs === String ? String(message.timestamp) : message.timestamp;
                     else
-                        object.timestamp =
-                            options.longs === String
-                                ? $util.Long.prototype.toString.call(message.timestamp)
-                                : options.longs === Number
-                                    ? new $util.LongBits(message.timestamp.low >>> 0, message.timestamp.high >>> 0).toNumber()
-                                    : message.timestamp;
-                if (message.value != null && message.hasOwnProperty('value'))
-                    object.value =
-                        options.json && !isFinite(message.value)
-                            ? String(message.value)
-                            : message.value;
-                if (message.hash != null && message.hasOwnProperty('hash'))
-                    if (typeof message.hash === 'number')
-                        object.hash =
-                            options.longs === String ? String(message.hash) : message.hash;
+                        object.timestamp = options.longs === String ? $util.Long.prototype.toString.call(message.timestamp) : options.longs === Number ? new $util.LongBits(message.timestamp.low >>> 0, message.timestamp.high >>> 0).toNumber() : message.timestamp;
+                if (message.value != null && message.hasOwnProperty("value"))
+                    object.value = options.json && !isFinite(message.value) ? String(message.value) : message.value;
+                if (message.hash != null && message.hasOwnProperty("hash"))
+                    if (typeof message.hash === "number")
+                        object.hash = options.longs === String ? String(message.hash) : message.hash;
                     else
-                        object.hash =
-                            options.longs === String
-                                ? $util.Long.prototype.toString.call(message.hash)
-                                : options.longs === Number
-                                    ? new $util.LongBits(message.hash.low >>> 0, message.hash.high >>> 0).toNumber(true)
-                                    : message.hash;
+                        object.hash = options.longs === String ? $util.Long.prototype.toString.call(message.hash) : options.longs === Number ? new $util.LongBits(message.hash.low >>> 0, message.hash.high >>> 0).toNumber(true) : message.hash;
                 return object;
             };
             /**
@@ -3026,12 +2803,12 @@
         })();
         logproto.Series = (function () {
             /**
-       * Properties of a Series.
-       * @memberof logproto
-       * @interface ISeries
-       * @property {string|null} [labels] Series labels
-       * @property {Array.<logproto.ISample>|null} [samples] Series samples
-       */
+             * Properties of a Series.
+             * @memberof logproto
+             * @interface ISeries
+             * @property {string|null} [labels] Series labels
+             * @property {Array.<logproto.ISample>|null} [samples] Series samples
+             */
             /**
              * Constructs a new Series.
              * @memberof logproto
@@ -3053,7 +2830,7 @@
              * @memberof logproto.Series
              * @instance
              */
-            Series.prototype.labels = '';
+            Series.prototype.labels = "";
             /**
              * Series samples.
              * @member {Array.<logproto.ISample>} samples
@@ -3084,8 +2861,7 @@
             Series.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.labels != null &&
-                    Object.hasOwnProperty.call(message, 'labels'))
+                if (message.labels != null && Object.hasOwnProperty.call(message, "labels"))
                     writer.uint32(/* id 1, wireType 2 =*/ 10).string(message.labels);
                 if (message.samples != null && message.samples.length)
                     for (var i = 0; i < message.samples.length; ++i)
@@ -3161,18 +2937,18 @@
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
             Series.verify = function verify(message) {
-                if (typeof message !== 'object' || message === null)
-                    return 'object expected';
-                if (message.labels != null && message.hasOwnProperty('labels'))
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.labels != null && message.hasOwnProperty("labels"))
                     if (!$util.isString(message.labels))
-                        return 'labels: string expected';
-                if (message.samples != null && message.hasOwnProperty('samples')) {
+                        return "labels: string expected";
+                if (message.samples != null && message.hasOwnProperty("samples")) {
                     if (!Array.isArray(message.samples))
-                        return 'samples: array expected';
+                        return "samples: array expected";
                     for (var i = 0; i < message.samples.length; ++i) {
                         var error = $root.logproto.Sample.verify(message.samples[i]);
                         if (error)
-                            return 'samples.' + error;
+                            return "samples." + error;
                     }
                 }
                 return null;
@@ -3193,11 +2969,11 @@
                     message.labels = String(object.labels);
                 if (object.samples) {
                     if (!Array.isArray(object.samples))
-                        throw TypeError('.logproto.Series.samples: array expected');
+                        throw TypeError(".logproto.Series.samples: array expected");
                     message.samples = [];
                     for (var i = 0; i < object.samples.length; ++i) {
-                        if (typeof object.samples[i] !== 'object')
-                            throw TypeError('.logproto.Series.samples: object expected');
+                        if (typeof object.samples[i] !== "object")
+                            throw TypeError(".logproto.Series.samples: object expected");
                         message.samples[i] = $root.logproto.Sample.fromObject(object.samples[i]);
                     }
                 }
@@ -3219,8 +2995,8 @@
                 if (options.arrays || options.defaults)
                     object.samples = [];
                 if (options.defaults)
-                    object.labels = '';
-                if (message.labels != null && message.hasOwnProperty('labels'))
+                    object.labels = "";
+                if (message.labels != null && message.hasOwnProperty("labels"))
                     object.labels = message.labels;
                 if (message.samples && message.samples.length) {
                     object.samples = [];
@@ -3243,14 +3019,14 @@
         })();
         logproto.TailRequest = (function () {
             /**
-       * Properties of a TailRequest.
-       * @memberof logproto
-       * @interface ITailRequest
-       * @property {string|null} [query] TailRequest query
-       * @property {number|null} [delayFor] TailRequest delayFor
-       * @property {number|null} [limit] TailRequest limit
-       * @property {google.protobuf.ITimestamp|null} [start] TailRequest start
-       */
+             * Properties of a TailRequest.
+             * @memberof logproto
+             * @interface ITailRequest
+             * @property {string|null} [query] TailRequest query
+             * @property {number|null} [delayFor] TailRequest delayFor
+             * @property {number|null} [limit] TailRequest limit
+             * @property {google.protobuf.ITimestamp|null} [start] TailRequest start
+             */
             /**
              * Constructs a new TailRequest.
              * @memberof logproto
@@ -3271,7 +3047,7 @@
              * @memberof logproto.TailRequest
              * @instance
              */
-            TailRequest.prototype.query = '';
+            TailRequest.prototype.query = "";
             /**
              * TailRequest delayFor.
              * @member {number} delayFor
@@ -3316,17 +3092,13 @@
             TailRequest.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.query != null &&
-                    Object.hasOwnProperty.call(message, 'query'))
+                if (message.query != null && Object.hasOwnProperty.call(message, "query"))
                     writer.uint32(/* id 1, wireType 2 =*/ 10).string(message.query);
-                if (message.delayFor != null &&
-                    Object.hasOwnProperty.call(message, 'delayFor'))
+                if (message.delayFor != null && Object.hasOwnProperty.call(message, "delayFor"))
                     writer.uint32(/* id 3, wireType 0 =*/ 24).uint32(message.delayFor);
-                if (message.limit != null &&
-                    Object.hasOwnProperty.call(message, 'limit'))
+                if (message.limit != null && Object.hasOwnProperty.call(message, "limit"))
                     writer.uint32(/* id 4, wireType 0 =*/ 32).uint32(message.limit);
-                if (message.start != null &&
-                    Object.hasOwnProperty.call(message, 'start'))
+                if (message.start != null && Object.hasOwnProperty.call(message, "start"))
                     $root.google.protobuf.Timestamp.encode(message.start, writer.uint32(/* id 5, wireType 2 =*/ 42).fork()).ldelim();
                 return writer;
             };
@@ -3403,21 +3175,21 @@
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
             TailRequest.verify = function verify(message) {
-                if (typeof message !== 'object' || message === null)
-                    return 'object expected';
-                if (message.query != null && message.hasOwnProperty('query'))
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.query != null && message.hasOwnProperty("query"))
                     if (!$util.isString(message.query))
-                        return 'query: string expected';
-                if (message.delayFor != null && message.hasOwnProperty('delayFor'))
+                        return "query: string expected";
+                if (message.delayFor != null && message.hasOwnProperty("delayFor"))
                     if (!$util.isInteger(message.delayFor))
-                        return 'delayFor: integer expected';
-                if (message.limit != null && message.hasOwnProperty('limit'))
+                        return "delayFor: integer expected";
+                if (message.limit != null && message.hasOwnProperty("limit"))
                     if (!$util.isInteger(message.limit))
-                        return 'limit: integer expected';
-                if (message.start != null && message.hasOwnProperty('start')) {
+                        return "limit: integer expected";
+                if (message.start != null && message.hasOwnProperty("start")) {
                     var error = $root.google.protobuf.Timestamp.verify(message.start);
                     if (error)
-                        return 'start.' + error;
+                        return "start." + error;
                 }
                 return null;
             };
@@ -3440,8 +3212,8 @@
                 if (object.limit != null)
                     message.limit = object.limit >>> 0;
                 if (object.start != null) {
-                    if (typeof object.start !== 'object')
-                        throw TypeError('.logproto.TailRequest.start: object expected');
+                    if (typeof object.start !== "object")
+                        throw TypeError(".logproto.TailRequest.start: object expected");
                     message.start = $root.google.protobuf.Timestamp.fromObject(object.start);
                 }
                 return message;
@@ -3460,18 +3232,18 @@
                     options = {};
                 var object = {};
                 if (options.defaults) {
-                    object.query = '';
+                    object.query = "";
                     object.delayFor = 0;
                     object.limit = 0;
                     object.start = null;
                 }
-                if (message.query != null && message.hasOwnProperty('query'))
+                if (message.query != null && message.hasOwnProperty("query"))
                     object.query = message.query;
-                if (message.delayFor != null && message.hasOwnProperty('delayFor'))
+                if (message.delayFor != null && message.hasOwnProperty("delayFor"))
                     object.delayFor = message.delayFor;
-                if (message.limit != null && message.hasOwnProperty('limit'))
+                if (message.limit != null && message.hasOwnProperty("limit"))
                     object.limit = message.limit;
-                if (message.start != null && message.hasOwnProperty('start'))
+                if (message.start != null && message.hasOwnProperty("start"))
                     object.start = $root.google.protobuf.Timestamp.toObject(message.start, options);
                 return object;
             };
@@ -3547,8 +3319,7 @@
             TailResponse.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.stream != null &&
-                    Object.hasOwnProperty.call(message, 'stream'))
+                if (message.stream != null && Object.hasOwnProperty.call(message, "stream"))
                     $root.logproto.StreamAdapter.encode(message.stream, writer.uint32(/* id 1, wireType 2 =*/ 10).fork()).ldelim();
                 if (message.droppedStreams != null && message.droppedStreams.length)
                     for (var i = 0; i < message.droppedStreams.length; ++i)
@@ -3624,21 +3395,20 @@
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
             TailResponse.verify = function verify(message) {
-                if (typeof message !== 'object' || message === null)
-                    return 'object expected';
-                if (message.stream != null && message.hasOwnProperty('stream')) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.stream != null && message.hasOwnProperty("stream")) {
                     var error = $root.logproto.StreamAdapter.verify(message.stream);
                     if (error)
-                        return 'stream.' + error;
+                        return "stream." + error;
                 }
-                if (message.droppedStreams != null &&
-                    message.hasOwnProperty('droppedStreams')) {
+                if (message.droppedStreams != null && message.hasOwnProperty("droppedStreams")) {
                     if (!Array.isArray(message.droppedStreams))
-                        return 'droppedStreams: array expected';
+                        return "droppedStreams: array expected";
                     for (var i = 0; i < message.droppedStreams.length; ++i) {
                         var error = $root.logproto.DroppedStream.verify(message.droppedStreams[i]);
                         if (error)
-                            return 'droppedStreams.' + error;
+                            return "droppedStreams." + error;
                     }
                 }
                 return null;
@@ -3656,17 +3426,17 @@
                     return object;
                 var message = new $root.logproto.TailResponse();
                 if (object.stream != null) {
-                    if (typeof object.stream !== 'object')
-                        throw TypeError('.logproto.TailResponse.stream: object expected');
+                    if (typeof object.stream !== "object")
+                        throw TypeError(".logproto.TailResponse.stream: object expected");
                     message.stream = $root.logproto.StreamAdapter.fromObject(object.stream);
                 }
                 if (object.droppedStreams) {
                     if (!Array.isArray(object.droppedStreams))
-                        throw TypeError('.logproto.TailResponse.droppedStreams: array expected');
+                        throw TypeError(".logproto.TailResponse.droppedStreams: array expected");
                     message.droppedStreams = [];
                     for (var i = 0; i < object.droppedStreams.length; ++i) {
-                        if (typeof object.droppedStreams[i] !== 'object')
-                            throw TypeError('.logproto.TailResponse.droppedStreams: object expected');
+                        if (typeof object.droppedStreams[i] !== "object")
+                            throw TypeError(".logproto.TailResponse.droppedStreams: object expected");
                         message.droppedStreams[i] = $root.logproto.DroppedStream.fromObject(object.droppedStreams[i]);
                     }
                 }
@@ -3689,7 +3459,7 @@
                     object.droppedStreams = [];
                 if (options.defaults)
                     object.stream = null;
-                if (message.stream != null && message.hasOwnProperty('stream'))
+                if (message.stream != null && message.hasOwnProperty("stream"))
                     object.stream = $root.logproto.StreamAdapter.toObject(message.stream, options);
                 if (message.droppedStreams && message.droppedStreams.length) {
                     object.droppedStreams = [];
@@ -3712,14 +3482,14 @@
         })();
         logproto.SeriesRequest = (function () {
             /**
-       * Properties of a SeriesRequest.
-       * @memberof logproto
-       * @interface ISeriesRequest
-       * @property {google.protobuf.ITimestamp|null} [start] SeriesRequest start
-       * @property {google.protobuf.ITimestamp|null} [end] SeriesRequest end
-       * @property {Array.<string>|null} [groups] SeriesRequest groups
-       * @property {Array.<string>|null} [shards] SeriesRequest shards
-       */
+             * Properties of a SeriesRequest.
+             * @memberof logproto
+             * @interface ISeriesRequest
+             * @property {google.protobuf.ITimestamp|null} [start] SeriesRequest start
+             * @property {google.protobuf.ITimestamp|null} [end] SeriesRequest end
+             * @property {Array.<string>|null} [groups] SeriesRequest groups
+             * @property {Array.<string>|null} [shards] SeriesRequest shards
+             */
             /**
              * Constructs a new SeriesRequest.
              * @memberof logproto
@@ -3787,10 +3557,9 @@
             SeriesRequest.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.start != null &&
-                    Object.hasOwnProperty.call(message, 'start'))
+                if (message.start != null && Object.hasOwnProperty.call(message, "start"))
                     $root.google.protobuf.Timestamp.encode(message.start, writer.uint32(/* id 1, wireType 2 =*/ 10).fork()).ldelim();
-                if (message.end != null && Object.hasOwnProperty.call(message, 'end'))
+                if (message.end != null && Object.hasOwnProperty.call(message, "end"))
                     $root.google.protobuf.Timestamp.encode(message.end, writer.uint32(/* id 2, wireType 2 =*/ 18).fork()).ldelim();
                 if (message.groups != null && message.groups.length)
                     for (var i = 0; i < message.groups.length; ++i)
@@ -3877,31 +3646,31 @@
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
             SeriesRequest.verify = function verify(message) {
-                if (typeof message !== 'object' || message === null)
-                    return 'object expected';
-                if (message.start != null && message.hasOwnProperty('start')) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.start != null && message.hasOwnProperty("start")) {
                     var error = $root.google.protobuf.Timestamp.verify(message.start);
                     if (error)
-                        return 'start.' + error;
+                        return "start." + error;
                 }
-                if (message.end != null && message.hasOwnProperty('end')) {
+                if (message.end != null && message.hasOwnProperty("end")) {
                     var error = $root.google.protobuf.Timestamp.verify(message.end);
                     if (error)
-                        return 'end.' + error;
+                        return "end." + error;
                 }
-                if (message.groups != null && message.hasOwnProperty('groups')) {
+                if (message.groups != null && message.hasOwnProperty("groups")) {
                     if (!Array.isArray(message.groups))
-                        return 'groups: array expected';
+                        return "groups: array expected";
                     for (var i = 0; i < message.groups.length; ++i)
                         if (!$util.isString(message.groups[i]))
-                            return 'groups: string[] expected';
+                            return "groups: string[] expected";
                 }
-                if (message.shards != null && message.hasOwnProperty('shards')) {
+                if (message.shards != null && message.hasOwnProperty("shards")) {
                     if (!Array.isArray(message.shards))
-                        return 'shards: array expected';
+                        return "shards: array expected";
                     for (var i = 0; i < message.shards.length; ++i)
                         if (!$util.isString(message.shards[i]))
-                            return 'shards: string[] expected';
+                            return "shards: string[] expected";
                 }
                 return null;
             };
@@ -3918,25 +3687,25 @@
                     return object;
                 var message = new $root.logproto.SeriesRequest();
                 if (object.start != null) {
-                    if (typeof object.start !== 'object')
-                        throw TypeError('.logproto.SeriesRequest.start: object expected');
+                    if (typeof object.start !== "object")
+                        throw TypeError(".logproto.SeriesRequest.start: object expected");
                     message.start = $root.google.protobuf.Timestamp.fromObject(object.start);
                 }
                 if (object.end != null) {
-                    if (typeof object.end !== 'object')
-                        throw TypeError('.logproto.SeriesRequest.end: object expected');
+                    if (typeof object.end !== "object")
+                        throw TypeError(".logproto.SeriesRequest.end: object expected");
                     message.end = $root.google.protobuf.Timestamp.fromObject(object.end);
                 }
                 if (object.groups) {
                     if (!Array.isArray(object.groups))
-                        throw TypeError('.logproto.SeriesRequest.groups: array expected');
+                        throw TypeError(".logproto.SeriesRequest.groups: array expected");
                     message.groups = [];
                     for (var i = 0; i < object.groups.length; ++i)
                         message.groups[i] = String(object.groups[i]);
                 }
                 if (object.shards) {
                     if (!Array.isArray(object.shards))
-                        throw TypeError('.logproto.SeriesRequest.shards: array expected');
+                        throw TypeError(".logproto.SeriesRequest.shards: array expected");
                     message.shards = [];
                     for (var i = 0; i < object.shards.length; ++i)
                         message.shards[i] = String(object.shards[i]);
@@ -3964,9 +3733,9 @@
                     object.start = null;
                     object.end = null;
                 }
-                if (message.start != null && message.hasOwnProperty('start'))
+                if (message.start != null && message.hasOwnProperty("start"))
                     object.start = $root.google.protobuf.Timestamp.toObject(message.start, options);
-                if (message.end != null && message.hasOwnProperty('end'))
+                if (message.end != null && message.hasOwnProperty("end"))
                     object.end = $root.google.protobuf.Timestamp.toObject(message.end, options);
                 if (message.groups && message.groups.length) {
                     object.groups = [];
@@ -3994,11 +3763,11 @@
         })();
         logproto.SeriesResponse = (function () {
             /**
-       * Properties of a SeriesResponse.
-       * @memberof logproto
-       * @interface ISeriesResponse
-       * @property {Array.<logproto.ISeriesIdentifier>|null} [series] SeriesResponse series
-       */
+             * Properties of a SeriesResponse.
+             * @memberof logproto
+             * @interface ISeriesResponse
+             * @property {Array.<logproto.ISeriesIdentifier>|null} [series] SeriesResponse series
+             */
             /**
              * Constructs a new SeriesResponse.
              * @memberof logproto
@@ -4115,15 +3884,15 @@
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
             SeriesResponse.verify = function verify(message) {
-                if (typeof message !== 'object' || message === null)
-                    return 'object expected';
-                if (message.series != null && message.hasOwnProperty('series')) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.series != null && message.hasOwnProperty("series")) {
                     if (!Array.isArray(message.series))
-                        return 'series: array expected';
+                        return "series: array expected";
                     for (var i = 0; i < message.series.length; ++i) {
                         var error = $root.logproto.SeriesIdentifier.verify(message.series[i]);
                         if (error)
-                            return 'series.' + error;
+                            return "series." + error;
                     }
                 }
                 return null;
@@ -4142,11 +3911,11 @@
                 var message = new $root.logproto.SeriesResponse();
                 if (object.series) {
                     if (!Array.isArray(object.series))
-                        throw TypeError('.logproto.SeriesResponse.series: array expected');
+                        throw TypeError(".logproto.SeriesResponse.series: array expected");
                     message.series = [];
                     for (var i = 0; i < object.series.length; ++i) {
-                        if (typeof object.series[i] !== 'object')
-                            throw TypeError('.logproto.SeriesResponse.series: object expected');
+                        if (typeof object.series[i] !== "object")
+                            throw TypeError(".logproto.SeriesResponse.series: object expected");
                         message.series[i] = $root.logproto.SeriesIdentifier.fromObject(object.series[i]);
                     }
                 }
@@ -4188,11 +3957,11 @@
         })();
         logproto.SeriesIdentifier = (function () {
             /**
-       * Properties of a SeriesIdentifier.
-       * @memberof logproto
-       * @interface ISeriesIdentifier
-       * @property {Object.<string,string>|null} [labels] SeriesIdentifier labels
-       */
+             * Properties of a SeriesIdentifier.
+             * @memberof logproto
+             * @interface ISeriesIdentifier
+             * @property {Object.<string,string>|null} [labels] SeriesIdentifier labels
+             */
             /**
              * Constructs a new SeriesIdentifier.
              * @memberof logproto
@@ -4238,17 +4007,9 @@
             SeriesIdentifier.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.labels != null &&
-                    Object.hasOwnProperty.call(message, 'labels'))
+                if (message.labels != null && Object.hasOwnProperty.call(message, "labels"))
                     for (var keys = Object.keys(message.labels), i = 0; i < keys.length; ++i)
-                        writer
-                            .uint32(/* id 1, wireType 2 =*/ 10)
-                            .fork()
-                            .uint32(/* id 1, wireType 2 =*/ 10)
-                            .string(keys[i])
-                            .uint32(/* id 2, wireType 2 =*/ 18)
-                            .string(message.labels[keys[i]])
-                            .ldelim();
+                        writer.uint32(/* id 1, wireType 2 =*/ 10).fork().uint32(/* id 1, wireType 2 =*/ 10).string(keys[i]).uint32(/* id 2, wireType 2 =*/ 18).string(message.labels[keys[i]]).ldelim();
                 return writer;
             };
             /**
@@ -4285,8 +4046,8 @@
                             if (message.labels === $util.emptyObject)
                                 message.labels = {};
                             var end2 = reader.uint32() + reader.pos;
-                            key = '';
-                            value = '';
+                            key = "";
+                            value = "";
                             while (reader.pos < end2) {
                                 var tag2 = reader.uint32();
                                 switch (tag2 >>> 3) {
@@ -4334,15 +4095,15 @@
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
             SeriesIdentifier.verify = function verify(message) {
-                if (typeof message !== 'object' || message === null)
-                    return 'object expected';
-                if (message.labels != null && message.hasOwnProperty('labels')) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.labels != null && message.hasOwnProperty("labels")) {
                     if (!$util.isObject(message.labels))
-                        return 'labels: object expected';
+                        return "labels: object expected";
                     var key = Object.keys(message.labels);
                     for (var i = 0; i < key.length; ++i)
                         if (!$util.isString(message.labels[key[i]]))
-                            return 'labels: string{k:string} expected';
+                            return "labels: string{k:string} expected";
                 }
                 return null;
             };
@@ -4359,8 +4120,8 @@
                     return object;
                 var message = new $root.logproto.SeriesIdentifier();
                 if (object.labels) {
-                    if (typeof object.labels !== 'object')
-                        throw TypeError('.logproto.SeriesIdentifier.labels: object expected');
+                    if (typeof object.labels !== "object")
+                        throw TypeError(".logproto.SeriesIdentifier.labels: object expected");
                     message.labels = {};
                     for (var keys = Object.keys(object.labels), i = 0; i < keys.length; ++i)
                         message.labels[keys[i]] = String(object.labels[keys[i]]);
@@ -4404,13 +4165,13 @@
         })();
         logproto.DroppedStream = (function () {
             /**
-       * Properties of a DroppedStream.
-       * @memberof logproto
-       * @interface IDroppedStream
-       * @property {google.protobuf.ITimestamp|null} [from] DroppedStream from
-       * @property {google.protobuf.ITimestamp|null} [to] DroppedStream to
-       * @property {string|null} [labels] DroppedStream labels
-       */
+             * Properties of a DroppedStream.
+             * @memberof logproto
+             * @interface IDroppedStream
+             * @property {google.protobuf.ITimestamp|null} [from] DroppedStream from
+             * @property {google.protobuf.ITimestamp|null} [to] DroppedStream to
+             * @property {string|null} [labels] DroppedStream labels
+             */
             /**
              * Constructs a new DroppedStream.
              * @memberof logproto
@@ -4445,7 +4206,7 @@
              * @memberof logproto.DroppedStream
              * @instance
              */
-            DroppedStream.prototype.labels = '';
+            DroppedStream.prototype.labels = "";
             /**
              * Creates a new DroppedStream instance using the specified properties.
              * @function create
@@ -4469,12 +4230,11 @@
             DroppedStream.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.from != null && Object.hasOwnProperty.call(message, 'from'))
+                if (message.from != null && Object.hasOwnProperty.call(message, "from"))
                     $root.google.protobuf.Timestamp.encode(message.from, writer.uint32(/* id 1, wireType 2 =*/ 10).fork()).ldelim();
-                if (message.to != null && Object.hasOwnProperty.call(message, 'to'))
+                if (message.to != null && Object.hasOwnProperty.call(message, "to"))
                     $root.google.protobuf.Timestamp.encode(message.to, writer.uint32(/* id 2, wireType 2 =*/ 18).fork()).ldelim();
-                if (message.labels != null &&
-                    Object.hasOwnProperty.call(message, 'labels'))
+                if (message.labels != null && Object.hasOwnProperty.call(message, "labels"))
                     writer.uint32(/* id 3, wireType 2 =*/ 26).string(message.labels);
                 return writer;
             };
@@ -4548,21 +4308,21 @@
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
             DroppedStream.verify = function verify(message) {
-                if (typeof message !== 'object' || message === null)
-                    return 'object expected';
-                if (message.from != null && message.hasOwnProperty('from')) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.from != null && message.hasOwnProperty("from")) {
                     var error = $root.google.protobuf.Timestamp.verify(message.from);
                     if (error)
-                        return 'from.' + error;
+                        return "from." + error;
                 }
-                if (message.to != null && message.hasOwnProperty('to')) {
+                if (message.to != null && message.hasOwnProperty("to")) {
                     var error = $root.google.protobuf.Timestamp.verify(message.to);
                     if (error)
-                        return 'to.' + error;
+                        return "to." + error;
                 }
-                if (message.labels != null && message.hasOwnProperty('labels'))
+                if (message.labels != null && message.hasOwnProperty("labels"))
                     if (!$util.isString(message.labels))
-                        return 'labels: string expected';
+                        return "labels: string expected";
                 return null;
             };
             /**
@@ -4578,13 +4338,13 @@
                     return object;
                 var message = new $root.logproto.DroppedStream();
                 if (object.from != null) {
-                    if (typeof object.from !== 'object')
-                        throw TypeError('.logproto.DroppedStream.from: object expected');
+                    if (typeof object.from !== "object")
+                        throw TypeError(".logproto.DroppedStream.from: object expected");
                     message.from = $root.google.protobuf.Timestamp.fromObject(object.from);
                 }
                 if (object.to != null) {
-                    if (typeof object.to !== 'object')
-                        throw TypeError('.logproto.DroppedStream.to: object expected');
+                    if (typeof object.to !== "object")
+                        throw TypeError(".logproto.DroppedStream.to: object expected");
                     message.to = $root.google.protobuf.Timestamp.fromObject(object.to);
                 }
                 if (object.labels != null)
@@ -4607,13 +4367,13 @@
                 if (options.defaults) {
                     object.from = null;
                     object.to = null;
-                    object.labels = '';
+                    object.labels = "";
                 }
-                if (message.from != null && message.hasOwnProperty('from'))
+                if (message.from != null && message.hasOwnProperty("from"))
                     object.from = $root.google.protobuf.Timestamp.toObject(message.from, options);
-                if (message.to != null && message.hasOwnProperty('to'))
+                if (message.to != null && message.hasOwnProperty("to"))
                     object.to = $root.google.protobuf.Timestamp.toObject(message.to, options);
-                if (message.labels != null && message.hasOwnProperty('labels'))
+                if (message.labels != null && message.hasOwnProperty("labels"))
                     object.labels = message.labels;
                 return object;
             };
@@ -4631,14 +4391,14 @@
         })();
         logproto.TimeSeriesChunk = (function () {
             /**
-       * Properties of a TimeSeriesChunk.
-       * @memberof logproto
-       * @interface ITimeSeriesChunk
-       * @property {string|null} [fromIngesterId] TimeSeriesChunk fromIngesterId
-       * @property {string|null} [userId] TimeSeriesChunk userId
-       * @property {Array.<logproto.ILabelPair>|null} [labels] TimeSeriesChunk labels
-       * @property {Array.<logproto.IChunk>|null} [chunks] TimeSeriesChunk chunks
-       */
+             * Properties of a TimeSeriesChunk.
+             * @memberof logproto
+             * @interface ITimeSeriesChunk
+             * @property {string|null} [fromIngesterId] TimeSeriesChunk fromIngesterId
+             * @property {string|null} [userId] TimeSeriesChunk userId
+             * @property {Array.<logproto.ILabelPair>|null} [labels] TimeSeriesChunk labels
+             * @property {Array.<logproto.IChunk>|null} [chunks] TimeSeriesChunk chunks
+             */
             /**
              * Constructs a new TimeSeriesChunk.
              * @memberof logproto
@@ -4661,14 +4421,14 @@
              * @memberof logproto.TimeSeriesChunk
              * @instance
              */
-            TimeSeriesChunk.prototype.fromIngesterId = '';
+            TimeSeriesChunk.prototype.fromIngesterId = "";
             /**
              * TimeSeriesChunk userId.
              * @member {string} userId
              * @memberof logproto.TimeSeriesChunk
              * @instance
              */
-            TimeSeriesChunk.prototype.userId = '';
+            TimeSeriesChunk.prototype.userId = "";
             /**
              * TimeSeriesChunk labels.
              * @member {Array.<logproto.ILabelPair>} labels
@@ -4706,13 +4466,9 @@
             TimeSeriesChunk.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.fromIngesterId != null &&
-                    Object.hasOwnProperty.call(message, 'fromIngesterId'))
-                    writer
-                        .uint32(/* id 1, wireType 2 =*/ 10)
-                        .string(message.fromIngesterId);
-                if (message.userId != null &&
-                    Object.hasOwnProperty.call(message, 'userId'))
+                if (message.fromIngesterId != null && Object.hasOwnProperty.call(message, "fromIngesterId"))
+                    writer.uint32(/* id 1, wireType 2 =*/ 10).string(message.fromIngesterId);
+                if (message.userId != null && Object.hasOwnProperty.call(message, "userId"))
                     writer.uint32(/* id 2, wireType 2 =*/ 18).string(message.userId);
                 if (message.labels != null && message.labels.length)
                     for (var i = 0; i < message.labels.length; ++i)
@@ -4799,31 +4555,30 @@
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
             TimeSeriesChunk.verify = function verify(message) {
-                if (typeof message !== 'object' || message === null)
-                    return 'object expected';
-                if (message.fromIngesterId != null &&
-                    message.hasOwnProperty('fromIngesterId'))
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.fromIngesterId != null && message.hasOwnProperty("fromIngesterId"))
                     if (!$util.isString(message.fromIngesterId))
-                        return 'fromIngesterId: string expected';
-                if (message.userId != null && message.hasOwnProperty('userId'))
+                        return "fromIngesterId: string expected";
+                if (message.userId != null && message.hasOwnProperty("userId"))
                     if (!$util.isString(message.userId))
-                        return 'userId: string expected';
-                if (message.labels != null && message.hasOwnProperty('labels')) {
+                        return "userId: string expected";
+                if (message.labels != null && message.hasOwnProperty("labels")) {
                     if (!Array.isArray(message.labels))
-                        return 'labels: array expected';
+                        return "labels: array expected";
                     for (var i = 0; i < message.labels.length; ++i) {
                         var error = $root.logproto.LabelPair.verify(message.labels[i]);
                         if (error)
-                            return 'labels.' + error;
+                            return "labels." + error;
                     }
                 }
-                if (message.chunks != null && message.hasOwnProperty('chunks')) {
+                if (message.chunks != null && message.hasOwnProperty("chunks")) {
                     if (!Array.isArray(message.chunks))
-                        return 'chunks: array expected';
+                        return "chunks: array expected";
                     for (var i = 0; i < message.chunks.length; ++i) {
                         var error = $root.logproto.Chunk.verify(message.chunks[i]);
                         if (error)
-                            return 'chunks.' + error;
+                            return "chunks." + error;
                     }
                 }
                 return null;
@@ -4846,21 +4601,21 @@
                     message.userId = String(object.userId);
                 if (object.labels) {
                     if (!Array.isArray(object.labels))
-                        throw TypeError('.logproto.TimeSeriesChunk.labels: array expected');
+                        throw TypeError(".logproto.TimeSeriesChunk.labels: array expected");
                     message.labels = [];
                     for (var i = 0; i < object.labels.length; ++i) {
-                        if (typeof object.labels[i] !== 'object')
-                            throw TypeError('.logproto.TimeSeriesChunk.labels: object expected');
+                        if (typeof object.labels[i] !== "object")
+                            throw TypeError(".logproto.TimeSeriesChunk.labels: object expected");
                         message.labels[i] = $root.logproto.LabelPair.fromObject(object.labels[i]);
                     }
                 }
                 if (object.chunks) {
                     if (!Array.isArray(object.chunks))
-                        throw TypeError('.logproto.TimeSeriesChunk.chunks: array expected');
+                        throw TypeError(".logproto.TimeSeriesChunk.chunks: array expected");
                     message.chunks = [];
                     for (var i = 0; i < object.chunks.length; ++i) {
-                        if (typeof object.chunks[i] !== 'object')
-                            throw TypeError('.logproto.TimeSeriesChunk.chunks: object expected');
+                        if (typeof object.chunks[i] !== "object")
+                            throw TypeError(".logproto.TimeSeriesChunk.chunks: object expected");
                         message.chunks[i] = $root.logproto.Chunk.fromObject(object.chunks[i]);
                     }
                 }
@@ -4884,13 +4639,12 @@
                     object.chunks = [];
                 }
                 if (options.defaults) {
-                    object.fromIngesterId = '';
-                    object.userId = '';
+                    object.fromIngesterId = "";
+                    object.userId = "";
                 }
-                if (message.fromIngesterId != null &&
-                    message.hasOwnProperty('fromIngesterId'))
+                if (message.fromIngesterId != null && message.hasOwnProperty("fromIngesterId"))
                     object.fromIngesterId = message.fromIngesterId;
-                if (message.userId != null && message.hasOwnProperty('userId'))
+                if (message.userId != null && message.hasOwnProperty("userId"))
                     object.userId = message.userId;
                 if (message.labels && message.labels.length) {
                     object.labels = [];
@@ -4918,12 +4672,12 @@
         })();
         logproto.LabelPair = (function () {
             /**
-       * Properties of a LabelPair.
-       * @memberof logproto
-       * @interface ILabelPair
-       * @property {string|null} [name] LabelPair name
-       * @property {string|null} [value] LabelPair value
-       */
+             * Properties of a LabelPair.
+             * @memberof logproto
+             * @interface ILabelPair
+             * @property {string|null} [name] LabelPair name
+             * @property {string|null} [value] LabelPair value
+             */
             /**
              * Constructs a new LabelPair.
              * @memberof logproto
@@ -4944,14 +4698,14 @@
              * @memberof logproto.LabelPair
              * @instance
              */
-            LabelPair.prototype.name = '';
+            LabelPair.prototype.name = "";
             /**
              * LabelPair value.
              * @member {string} value
              * @memberof logproto.LabelPair
              * @instance
              */
-            LabelPair.prototype.value = '';
+            LabelPair.prototype.value = "";
             /**
              * Creates a new LabelPair instance using the specified properties.
              * @function create
@@ -4975,10 +4729,9 @@
             LabelPair.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.name != null && Object.hasOwnProperty.call(message, 'name'))
+                if (message.name != null && Object.hasOwnProperty.call(message, "name"))
                     writer.uint32(/* id 1, wireType 2 =*/ 10).string(message.name);
-                if (message.value != null &&
-                    Object.hasOwnProperty.call(message, 'value'))
+                if (message.value != null && Object.hasOwnProperty.call(message, "value"))
                     writer.uint32(/* id 2, wireType 2 =*/ 18).string(message.value);
                 return writer;
             };
@@ -5049,14 +4802,14 @@
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
             LabelPair.verify = function verify(message) {
-                if (typeof message !== 'object' || message === null)
-                    return 'object expected';
-                if (message.name != null && message.hasOwnProperty('name'))
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.name != null && message.hasOwnProperty("name"))
                     if (!$util.isString(message.name))
-                        return 'name: string expected';
-                if (message.value != null && message.hasOwnProperty('value'))
+                        return "name: string expected";
+                if (message.value != null && message.hasOwnProperty("value"))
                     if (!$util.isString(message.value))
-                        return 'value: string expected';
+                        return "value: string expected";
                 return null;
             };
             /**
@@ -5091,12 +4844,12 @@
                     options = {};
                 var object = {};
                 if (options.defaults) {
-                    object.name = '';
-                    object.value = '';
+                    object.name = "";
+                    object.value = "";
                 }
-                if (message.name != null && message.hasOwnProperty('name'))
+                if (message.name != null && message.hasOwnProperty("name"))
                     object.name = message.name;
-                if (message.value != null && message.hasOwnProperty('value'))
+                if (message.value != null && message.hasOwnProperty("value"))
                     object.value = message.value;
                 return object;
             };
@@ -5114,11 +4867,11 @@
         })();
         logproto.Chunk = (function () {
             /**
-       * Properties of a Chunk.
-       * @memberof logproto
-       * @interface IChunk
-       * @property {Uint8Array|null} [data] Chunk data
-       */
+             * Properties of a Chunk.
+             * @memberof logproto
+             * @interface IChunk
+             * @property {Uint8Array|null} [data] Chunk data
+             */
             /**
              * Constructs a new Chunk.
              * @memberof logproto
@@ -5163,7 +4916,7 @@
             Chunk.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.data != null && Object.hasOwnProperty.call(message, 'data'))
+                if (message.data != null && Object.hasOwnProperty.call(message, "data"))
                     writer.uint32(/* id 1, wireType 2 =*/ 10).bytes(message.data);
                 return writer;
             };
@@ -5231,12 +4984,11 @@
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
             Chunk.verify = function verify(message) {
-                if (typeof message !== 'object' || message === null)
-                    return 'object expected';
-                if (message.data != null && message.hasOwnProperty('data'))
-                    if (!((message.data && typeof message.data.length === 'number') ||
-                        $util.isString(message.data)))
-                        return 'data: buffer expected';
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.data != null && message.hasOwnProperty("data"))
+                    if (!(message.data && typeof message.data.length === "number" || $util.isString(message.data)))
+                        return "data: buffer expected";
                 return null;
             };
             /**
@@ -5252,8 +5004,8 @@
                     return object;
                 var message = new $root.logproto.Chunk();
                 if (object.data != null)
-                    if (typeof object.data === 'string')
-                        $util.base64.decode(object.data, (message.data = $util.newBuffer($util.base64.length(object.data))), 0);
+                    if (typeof object.data === "string")
+                        $util.base64.decode(object.data, message.data = $util.newBuffer($util.base64.length(object.data)), 0);
                     else if (object.data.length)
                         message.data = object.data;
                 return message;
@@ -5273,19 +5025,14 @@
                 var object = {};
                 if (options.defaults)
                     if (options.bytes === String)
-                        object.data = '';
+                        object.data = "";
                     else {
                         object.data = [];
                         if (options.bytes !== Array)
                             object.data = $util.newBuffer(object.data);
                     }
-                if (message.data != null && message.hasOwnProperty('data'))
-                    object.data =
-                        options.bytes === String
-                            ? $util.base64.encode(message.data, 0, message.data.length)
-                            : options.bytes === Array
-                                ? Array.prototype.slice.call(message.data)
-                                : message.data;
+                if (message.data != null && message.hasOwnProperty("data"))
+                    object.data = options.bytes === String ? $util.base64.encode(message.data, 0, message.data.length) : options.bytes === Array ? Array.prototype.slice.call(message.data) : message.data;
                 return object;
             };
             /**
@@ -5302,10 +5049,10 @@
         })();
         logproto.TransferChunksResponse = (function () {
             /**
-       * Properties of a TransferChunksResponse.
-       * @memberof logproto
-       * @interface ITransferChunksResponse
-       */
+             * Properties of a TransferChunksResponse.
+             * @memberof logproto
+             * @interface ITransferChunksResponse
+             */
             /**
              * Constructs a new TransferChunksResponse.
              * @memberof logproto
@@ -5406,8 +5153,8 @@
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
             TransferChunksResponse.verify = function verify(message) {
-                if (typeof message !== 'object' || message === null)
-                    return 'object expected';
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
                 return null;
             };
             /**
@@ -5553,8 +5300,8 @@
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
             TailersCountRequest.verify = function verify(message) {
-                if (typeof message !== 'object' || message === null)
-                    return 'object expected';
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
                 return null;
             };
             /**
@@ -5596,11 +5343,11 @@
         })();
         logproto.TailersCountResponse = (function () {
             /**
-       * Properties of a TailersCountResponse.
-       * @memberof logproto
-       * @interface ITailersCountResponse
-       * @property {number|null} [count] TailersCountResponse count
-       */
+             * Properties of a TailersCountResponse.
+             * @memberof logproto
+             * @interface ITailersCountResponse
+             * @property {number|null} [count] TailersCountResponse count
+             */
             /**
              * Constructs a new TailersCountResponse.
              * @memberof logproto
@@ -5645,8 +5392,7 @@
             TailersCountResponse.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.count != null &&
-                    Object.hasOwnProperty.call(message, 'count'))
+                if (message.count != null && Object.hasOwnProperty.call(message, "count"))
                     writer.uint32(/* id 1, wireType 0 =*/ 8).uint32(message.count);
                 return writer;
             };
@@ -5714,11 +5460,11 @@
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
             TailersCountResponse.verify = function verify(message) {
-                if (typeof message !== 'object' || message === null)
-                    return 'object expected';
-                if (message.count != null && message.hasOwnProperty('count'))
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.count != null && message.hasOwnProperty("count"))
                     if (!$util.isInteger(message.count))
-                        return 'count: integer expected';
+                        return "count: integer expected";
                 return null;
             };
             /**
@@ -5752,7 +5498,7 @@
                 var object = {};
                 if (options.defaults)
                     object.count = 0;
-                if (message.count != null && message.hasOwnProperty('count'))
+                if (message.count != null && message.hasOwnProperty("count"))
                     object.count = message.count;
                 return object;
             };
@@ -5797,7 +5543,7 @@
              * @memberof logproto.GetChunkIDsRequest
              * @instance
              */
-            GetChunkIDsRequest.prototype.matchers = '';
+            GetChunkIDsRequest.prototype.matchers = "";
             /**
              * GetChunkIDsRequest start.
              * @member {google.protobuf.ITimestamp|null|undefined} start
@@ -5835,13 +5581,11 @@
             GetChunkIDsRequest.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.matchers != null &&
-                    Object.hasOwnProperty.call(message, 'matchers'))
+                if (message.matchers != null && Object.hasOwnProperty.call(message, "matchers"))
                     writer.uint32(/* id 1, wireType 2 =*/ 10).string(message.matchers);
-                if (message.start != null &&
-                    Object.hasOwnProperty.call(message, 'start'))
+                if (message.start != null && Object.hasOwnProperty.call(message, "start"))
                     $root.google.protobuf.Timestamp.encode(message.start, writer.uint32(/* id 2, wireType 2 =*/ 18).fork()).ldelim();
-                if (message.end != null && Object.hasOwnProperty.call(message, 'end'))
+                if (message.end != null && Object.hasOwnProperty.call(message, "end"))
                     $root.google.protobuf.Timestamp.encode(message.end, writer.uint32(/* id 3, wireType 2 =*/ 26).fork()).ldelim();
                 return writer;
             };
@@ -5915,20 +5659,20 @@
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
             GetChunkIDsRequest.verify = function verify(message) {
-                if (typeof message !== 'object' || message === null)
-                    return 'object expected';
-                if (message.matchers != null && message.hasOwnProperty('matchers'))
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.matchers != null && message.hasOwnProperty("matchers"))
                     if (!$util.isString(message.matchers))
-                        return 'matchers: string expected';
-                if (message.start != null && message.hasOwnProperty('start')) {
+                        return "matchers: string expected";
+                if (message.start != null && message.hasOwnProperty("start")) {
                     var error = $root.google.protobuf.Timestamp.verify(message.start);
                     if (error)
-                        return 'start.' + error;
+                        return "start." + error;
                 }
-                if (message.end != null && message.hasOwnProperty('end')) {
+                if (message.end != null && message.hasOwnProperty("end")) {
                     var error = $root.google.protobuf.Timestamp.verify(message.end);
                     if (error)
-                        return 'end.' + error;
+                        return "end." + error;
                 }
                 return null;
             };
@@ -5947,13 +5691,13 @@
                 if (object.matchers != null)
                     message.matchers = String(object.matchers);
                 if (object.start != null) {
-                    if (typeof object.start !== 'object')
-                        throw TypeError('.logproto.GetChunkIDsRequest.start: object expected');
+                    if (typeof object.start !== "object")
+                        throw TypeError(".logproto.GetChunkIDsRequest.start: object expected");
                     message.start = $root.google.protobuf.Timestamp.fromObject(object.start);
                 }
                 if (object.end != null) {
-                    if (typeof object.end !== 'object')
-                        throw TypeError('.logproto.GetChunkIDsRequest.end: object expected');
+                    if (typeof object.end !== "object")
+                        throw TypeError(".logproto.GetChunkIDsRequest.end: object expected");
                     message.end = $root.google.protobuf.Timestamp.fromObject(object.end);
                 }
                 return message;
@@ -5972,15 +5716,15 @@
                     options = {};
                 var object = {};
                 if (options.defaults) {
-                    object.matchers = '';
+                    object.matchers = "";
                     object.start = null;
                     object.end = null;
                 }
-                if (message.matchers != null && message.hasOwnProperty('matchers'))
+                if (message.matchers != null && message.hasOwnProperty("matchers"))
                     object.matchers = message.matchers;
-                if (message.start != null && message.hasOwnProperty('start'))
+                if (message.start != null && message.hasOwnProperty("start"))
                     object.start = $root.google.protobuf.Timestamp.toObject(message.start, options);
-                if (message.end != null && message.hasOwnProperty('end'))
+                if (message.end != null && message.hasOwnProperty("end"))
                     object.end = $root.google.protobuf.Timestamp.toObject(message.end, options);
                 return object;
             };
@@ -5998,11 +5742,11 @@
         })();
         logproto.GetChunkIDsResponse = (function () {
             /**
-       * Properties of a GetChunkIDsResponse.
-       * @memberof logproto
-       * @interface IGetChunkIDsResponse
-       * @property {Array.<string>|null} [chunkIDs] GetChunkIDsResponse chunkIDs
-       */
+             * Properties of a GetChunkIDsResponse.
+             * @memberof logproto
+             * @interface IGetChunkIDsResponse
+             * @property {Array.<string>|null} [chunkIDs] GetChunkIDsResponse chunkIDs
+             */
             /**
              * Constructs a new GetChunkIDsResponse.
              * @memberof logproto
@@ -6050,9 +5794,7 @@
                     writer = $Writer.create();
                 if (message.chunkIDs != null && message.chunkIDs.length)
                     for (var i = 0; i < message.chunkIDs.length; ++i)
-                        writer
-                            .uint32(/* id 1, wireType 2 =*/ 10)
-                            .string(message.chunkIDs[i]);
+                        writer.uint32(/* id 1, wireType 2 =*/ 10).string(message.chunkIDs[i]);
                 return writer;
             };
             /**
@@ -6121,14 +5863,14 @@
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
             GetChunkIDsResponse.verify = function verify(message) {
-                if (typeof message !== 'object' || message === null)
-                    return 'object expected';
-                if (message.chunkIDs != null && message.hasOwnProperty('chunkIDs')) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.chunkIDs != null && message.hasOwnProperty("chunkIDs")) {
                     if (!Array.isArray(message.chunkIDs))
-                        return 'chunkIDs: array expected';
+                        return "chunkIDs: array expected";
                     for (var i = 0; i < message.chunkIDs.length; ++i)
                         if (!$util.isString(message.chunkIDs[i]))
-                            return 'chunkIDs: string[] expected';
+                            return "chunkIDs: string[] expected";
                 }
                 return null;
             };
@@ -6146,7 +5888,7 @@
                 var message = new $root.logproto.GetChunkIDsResponse();
                 if (object.chunkIDs) {
                     if (!Array.isArray(object.chunkIDs))
-                        throw TypeError('.logproto.GetChunkIDsResponse.chunkIDs: array expected');
+                        throw TypeError(".logproto.GetChunkIDsResponse.chunkIDs: array expected");
                     message.chunkIDs = [];
                     for (var i = 0; i < object.chunkIDs.length; ++i)
                         message.chunkIDs[i] = String(object.chunkIDs[i]);
@@ -6191,26 +5933,26 @@
     })();
     $root.google = (function () {
         /**
-     * Namespace google.
-     * @exports google
-     * @namespace
-     */
+         * Namespace google.
+         * @exports google
+         * @namespace
+         */
         var google = {};
         google.protobuf = (function () {
             /**
-       * Namespace protobuf.
-       * @memberof google
-       * @namespace
-       */
+             * Namespace protobuf.
+             * @memberof google
+             * @namespace
+             */
             var protobuf = {};
             protobuf.Timestamp = (function () {
                 /**
-         * Properties of a Timestamp.
-         * @memberof google.protobuf
-         * @interface ITimestamp
-         * @property {number|Long|null} [seconds] Timestamp seconds
-         * @property {number|null} [nanos] Timestamp nanos
-         */
+                 * Properties of a Timestamp.
+                 * @memberof google.protobuf
+                 * @interface ITimestamp
+                 * @property {number|Long|null} [seconds] Timestamp seconds
+                 * @property {number|null} [nanos] Timestamp nanos
+                 */
                 /**
                  * Constructs a new Timestamp.
                  * @memberof google.protobuf
@@ -6231,16 +5973,13 @@
                  * @memberof google.protobuf.Timestamp
                  * @instance
                  */
-                Timestamp.prototype.seconds = $util.Long
-                    ? $util.Long.fromBits(0, 0, false)
-                    :
-                ;
+                Timestamp.prototype.seconds = $util.Long ? $util.Long.fromBits(0, 0, false) : 0;
                 /**
-         * Timestamp nanos.
-         * @member {number} nanos
-         * @memberof google.protobuf.Timestamp
-         * @instance
-         */
+                 * Timestamp nanos.
+                 * @member {number} nanos
+                 * @memberof google.protobuf.Timestamp
+                 * @instance
+                 */
                 Timestamp.prototype.nanos = 0;
                 /**
                  * Creates a new Timestamp instance using the specified properties.
@@ -6265,11 +6004,9 @@
                 Timestamp.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
-                    if (message.seconds != null &&
-                        Object.hasOwnProperty.call(message, 'seconds'))
+                    if (message.seconds != null && Object.hasOwnProperty.call(message, "seconds"))
                         writer.uint32(/* id 1, wireType 0 =*/ 8).int64(message.seconds);
-                    if (message.nanos != null &&
-                        Object.hasOwnProperty.call(message, 'nanos'))
+                    if (message.nanos != null && Object.hasOwnProperty.call(message, "nanos"))
                         writer.uint32(/* id 2, wireType 0 =*/ 16).int32(message.nanos);
                     return writer;
                 };
@@ -6340,17 +6077,14 @@
                  * @returns {string|null} `null` if valid, otherwise the reason why it is not
                  */
                 Timestamp.verify = function verify(message) {
-                    if (typeof message !== 'object' || message === null)
-                        return 'object expected';
-                    if (message.seconds != null && message.hasOwnProperty('seconds'))
-                        if (!$util.isInteger(message.seconds) &&
-                            !(message.seconds &&
-                                $util.isInteger(message.seconds.low) &&
-                                $util.isInteger(message.seconds.high)))
-                            return 'seconds: integer|Long expected';
-                    if (message.nanos != null && message.hasOwnProperty('nanos'))
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.seconds != null && message.hasOwnProperty("seconds"))
+                        if (!$util.isInteger(message.seconds) && !(message.seconds && $util.isInteger(message.seconds.low) && $util.isInteger(message.seconds.high)))
+                            return "seconds: integer|Long expected";
+                    if (message.nanos != null && message.hasOwnProperty("nanos"))
                         if (!$util.isInteger(message.nanos))
-                            return 'nanos: integer expected';
+                            return "nanos: integer expected";
                     return null;
                 };
                 /**
@@ -6368,11 +6102,11 @@
                     if (object.seconds != null)
                         if ($util.Long)
                             (message.seconds = $util.Long.fromValue(object.seconds)).unsigned = false;
-                        else if (typeof object.seconds === 'string')
+                        else if (typeof object.seconds === "string")
                             message.seconds = parseInt(object.seconds, 10);
-                        else if (typeof object.seconds === 'number')
+                        else if (typeof object.seconds === "number")
                             message.seconds = object.seconds;
-                        else if (typeof object.seconds === 'object')
+                        else if (typeof object.seconds === "object")
                             message.seconds = new $util.LongBits(object.seconds.low >>> 0, object.seconds.high >>> 0).toNumber();
                     if (object.nanos != null)
                         message.nanos = object.nanos | 0;
@@ -6394,31 +6128,18 @@
                     if (options.defaults) {
                         if ($util.Long) {
                             var long = new $util.Long(0, 0, false);
-                            object.seconds =
-                                options.longs === String
-                                    ? long.toString()
-                                    : options.longs === Number
-                                        ? long.toNumber()
-                                        : long;
+                            object.seconds = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
                         }
                         else
-                            object.seconds = options.longs === String ? '0' : 0;
+                            object.seconds = options.longs === String ? "0" : 0;
                         object.nanos = 0;
                     }
-                    if (message.seconds != null && message.hasOwnProperty('seconds'))
-                        if (typeof message.seconds === 'number')
-                            object.seconds =
-                                options.longs === String
-                                    ? String(message.seconds)
-                                    : message.seconds;
+                    if (message.seconds != null && message.hasOwnProperty("seconds"))
+                        if (typeof message.seconds === "number")
+                            object.seconds = options.longs === String ? String(message.seconds) : message.seconds;
                         else
-                            object.seconds =
-                                options.longs === String
-                                    ? $util.Long.prototype.toString.call(message.seconds)
-                                    : options.longs === Number
-                                        ? new $util.LongBits(message.seconds.low >>> 0, message.seconds.high >>> 0).toNumber()
-                                        : message.seconds;
-                    if (message.nanos != null && message.hasOwnProperty('nanos'))
+                            object.seconds = options.longs === String ? $util.Long.prototype.toString.call(message.seconds) : options.longs === Number ? new $util.LongBits(message.seconds.low >>> 0, message.seconds.high >>> 0).toNumber() : message.seconds;
+                    if (message.nanos != null && message.hasOwnProperty("nanos"))
                         object.nanos = message.nanos;
                     return object;
                 };
